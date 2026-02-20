@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import axios from 'axios';
@@ -119,7 +119,8 @@ const MapComponent = ({ routePath, setHoveredDistrict }) => {
 
     return (
         <div className="h-full w-full z-0">
-            <MapContainer center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true} className="h-full w-full">
+            <MapContainer key="map-container-v1" center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true} className="h-full w-full" zoomControl={false}>
+                <ZoomControl position="bottomleft" />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" // Dark theme map

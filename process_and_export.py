@@ -53,27 +53,106 @@ def load_and_process_data():
     # Standardize District Names
     df['district_std'] = df['district'].str.upper().str.strip()
 
-    # 2. Trend Analysis (Future Increase Chance)
-    print("Analyzing Trends...")
-    # Pivot to get WCI by Year for each district
-    pivot_wci = df.pivot_table(index='district_std', columns='year', values='WCI', aggfunc='mean')
+    # 2. LSTM-Based Trend Analysis (Future Increase Chance)
+    print("=" * 60)
+    print("LSTM Prediction Pipeline")
+    print("=" * 60)
     
-    # Get sorted years
+    from sklearn.preprocessing import MinMaxScaler
+    
+    # Suppress TensorFlow info logs for cleaner output
+    import os as _os
+    _os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+    
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import LSTM, Dense
+    
+    # Pivot to get WCI by Year for each district (rows=districts, cols=years)
+    pivot_wci = df.pivot_table(index='district_std', columns='year', values='WCI', aggfunc='mean')
+    pivot_wci = pivot_wci.fillna(0)  # Fill missing years with 0
+    
     years = sorted(pivot_wci.columns)
     latest_year = years[-1]
-    prev_year = years[-2] if len(years) > 1 else latest_year
+    print(f"Districts: {len(pivot_wci)}, Years: {years}")
     
-    trend_map = {}
+    # Step 1: Per-district normalization and sequence creation
+    time_step = 3
+    X_combined, y_combined = [], []
+    district_scales = {}  # Store min/max per district for inverse transform
+    
     for district in pivot_wci.index:
-        current_val = pivot_wci.loc[district, latest_year]
-        prev_val = pivot_wci.loc[district, prev_year]
+        series = pivot_wci.loc[district].values.astype(float)
+        d_min, d_max = series.min(), series.max()
+        district_scales[district] = (d_min, d_max)
         
-        if prev_val > 0:
-            change = ((current_val - prev_val) / prev_val) * 100
+        # Normalize to [0, 1]
+        if d_max - d_min > 0:
+            scaled = (series - d_min) / (d_max - d_min)
         else:
-            change = 0.0 # No data or 0 base
-            
+            scaled = np.zeros_like(series)
+        
+        # Create sliding window sequences
+        for j in range(len(scaled) - time_step):
+            X_combined.append(scaled[j:j + time_step])
+            y_combined.append(scaled[j + time_step])
+    
+    X_combined = np.array(X_combined)
+    y_combined = np.array(y_combined)
+    X_reshaped = X_combined.reshape(X_combined.shape[0], X_combined.shape[1], 1)
+    
+    print(f"Training sequences: {len(X_combined)} (time_step={time_step})")
+    print(f"X shape: {X_reshaped.shape}, y shape: {y_combined.shape}")
+    
+    # Step 2: Build LSTM model (same architecture as notebook)
+    model = Sequential()
+    model.add(LSTM(50, activation='relu', input_shape=(time_step, 1)))
+    model.add(Dense(1))
+    model.compile(optimizer='adam', loss='mean_squared_error')
+    
+    print("Training LSTM model (50 epochs)...")
+    model.fit(X_reshaped, y_combined, epochs=50, batch_size=32, verbose=0)
+    print("[OK] LSTM training complete!")
+    
+    # Step 3: Predict next year's WCI for each district
+    trend_map = {}
+    prediction_map = {}
+    
+    for district in pivot_wci.index:
+        series = pivot_wci.loc[district].values.astype(float)
+        d_min, d_max = district_scales[district]
+        
+        # Normalize the last 3 years
+        if d_max - d_min > 0:
+            scaled = (series - d_min) / (d_max - d_min)
+        else:
+            scaled = np.zeros_like(series)
+        
+        last_sequence = scaled[-time_step:].reshape(1, time_step, 1)
+        predicted_scaled = model.predict(last_sequence, verbose=0)[0][0]
+        
+        # Inverse scale: predicted_wci = predicted_scaled * (max - min) + min
+        predicted_wci = predicted_scaled * (d_max - d_min) + d_min
+        
+        # Get latest actual WCI
+        actual_wci = series[-1]
+        
+        # Calculate percentage change
+        if actual_wci > 0:
+            change = ((predicted_wci - actual_wci) / actual_wci) * 100
+        else:
+            change = 0.0
+        
         trend_map[district] = change
+        prediction_map[district] = predicted_wci
+    
+    # Print some sample predictions
+    print(f"\n[LSTM] Sample Predictions (vs {latest_year} actual):")
+    sample_districts = list(pivot_wci.index)[:5]
+    for d in sample_districts:
+        actual = pivot_wci.loc[d, latest_year]
+        predicted = prediction_map.get(d, 0)
+        change = trend_map.get(d, 0)
+        print(f"  {d}: Actual={actual:.4f} -> Predicted={predicted:.4f} ({change:+.1f}%)")
 
     # 3. Hotspot Classification (on Latest Data)
     print(f"Latest Year: {latest_year}")

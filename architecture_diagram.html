@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeTravels India - System Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 16px;
+        }
+
+        .container {
+            width: 1100px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            padding: 24px 28px;
+            border: 1px solid #334155;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .title h1 {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title p {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        .flow-arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            gap: 8px;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .flow-step.purple {
+            background: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .flow-step.green {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .flow-step.blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .flow-arrow {
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .column {
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid;
+        }
+
+        .column.purple {
+            background: rgba(139, 92, 246, 0.05);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .column.green {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .column.blue {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .column-header .icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .column.purple .icon {
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .column.green .icon {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .column.blue .icon {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .column-header h2 {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .column-header span {
+            font-size: 9px;
+            color: #64748b;
+        }
+
+        .tree-item {
+            position: relative;
+            padding: 3px 0 3px 14px;
+            font-size: 10px;
+            color: #94a3b8;
+        }
+
+        .tree-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #334155;
+        }
+
+        .tree-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 10px;
+            height: 1px;
+            background: #334155;
+        }
+
+        .tree-item:last-child::before {
+            height: 50%;
+        }
+
+        .tree-item .node {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            font-size: 10px;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        .tree-item .node.file {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .tree-item .node.api {
+            color: #34d399;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+        }
+
+        .tree-item .node.component {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .tree-item .node .tag {
+            font-size: 7px;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .tag.py {
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+        }
+
+        .tag.api-tag {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+
+        .tag.jsx {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+
+        .tag.data {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .tree-item .sub-tree {
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .tech-badge {
+            font-size: 8px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: rgba(51, 65, 85, 0.5);
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #1e293b;
+            color: #475569;
+            font-size: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>🛡️ SafeTravels India — System Architecture</h1>
+            <p>Crime Prediction & Safe Route Planning Platform</p>
+        </div>
+        <div class="flow-arrow-container">
+            <div class="flow-step purple">🧠 ML Pipeline</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step green">⚡ REST API</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step blue">🗺️ Interactive UI</div>
+        </div>
+        <div class="columns">
+            <!-- DATA PIPELINE -->
+            <div class="column purple">
+                <div class="column-header">
+                    <div class="icon">🧠</div>
+                    <div>
+                        <h2>Data Pipeline</h2><span>ML Model & Processing</span>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="tree-item">
+                        <span class="node file">📓 Crime_Detection_Model.ipynb <span class="tag py">PY</span></span>
+                        <div class="sub-tree">
+                            <div class="tree-item"><span class="node">📊 Data Cleaning & Preprocessing</span></div>
+                            <div class="tree-item"><span class="node">📈 WCI Calculation</span></div>
+                            <div class="tree-item"><span class="node">🤖 LSTM Prediction Model</span></div>
+                            <div class="tree-item"><span class="node">🏷️ Hotspot Classification</span></div>
+                        </div>
+                    </div>
+                    <div class="tree-item">
+                        <span class="node file">⚙️ process_and_export.py <span class="tag py">PY</span></span>
+                        <div class="sub-tree">
+                            <div class="tree-item"><span class="node">🗺️ GeoJSON Merge</span></div>
+                            <div class="tree-item"><span class="node">🔗 Graph Generation</span></div>
+                            <div class="tree-item"><span class="node">💾 Export → JSON</span></div>
+                        </div>
+                    </div>
+                    <div class="tree-item">
+                        <span class="node file">📁 Output Files <span class="tag data">DATA</span></span>
+                        <div class="sub-tree">
+                            <div class="tree-item"><span class="node">crime_data_v2.geojson</span></div>
+                            <div class="tree-item"><span class="node">district_graph.json</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">GeoPandas</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">NetworkX</span>
+                </div>
+            </div>
+            <!-- BACKEND API -->
+            <div class="column green">
+                <div class="column-header">
+                    <div class="icon">⚡</div>
+                    <div>
+                        <h2>Backend API</h2><span>FastAPI + Uvicorn</span>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="tree-item">
+                        <span class="node file">🐍 main.py <span class="tag api-tag">API</span></span>
+                        <div class="sub-tree">
+                            <div class="tree-item"><span class="node">📦 load_data() — Startup</span></div>
+                            <div class="tree-item">
+                                <span class="node api">GET /api/districts_v3</span>
+                                <div class="sub-tree">
+                                    <div class="tree-item"><span class="node">GeoJSON · 725 districts</span></div>
+                                    <div class="tree-item"><span class="node">Null-district filtering</span></div>
+                                </div>
+                            </div>
+                            <div class="tree-item">
+                                <span class="node api">POST /api/safest-route</span>
+                                <div class="sub-tree">
+                                    <div class="tree-item"><span class="node">Dijkstra's Shortest Path</span></div>
+                                    <div class="tree-item"><span class="node">Risk-weighted edges</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-item"><span class="node">🔒 CORS Middleware</span></div>
+                    <div class="tree-item"><span class="node">🗄️ In-Memory Cache</span></div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Uvicorn</span>
+                    <span class="tech-badge">NetworkX</span>
+                    <span class="tech-badge">Pydantic</span>
+                </div>
+            </div>
+            <!-- FRONTEND -->
+            <div class="column blue">
+                <div class="column-header">
+                    <div class="icon">🗺️</div>
+                    <div>
+                        <h2>Frontend</h2><span>React + Vite + Leaflet</span>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="tree-item">
+                        <span class="node component">⚛️ App.jsx <span class="tag jsx">JSX</span></span>
+                        <div class="sub-tree">
+                            <div class="tree-item">
+                                <span class="node component">📋 Sidebar.jsx</span>
+                                <div class="sub-tree">
+                                    <div class="tree-item"><span class="node">🏷️ Current Region Panel</span></div>
+                                    <div class="tree-item"><span class="node">⚠️ Risk Level Badge</span></div>
+                                    <div class="tree-item"><span class="node">📈 Future Trend</span></div>
+                                    <div class="tree-item">
+                                        <span class="node">🔍 Route Finder</span>
+                                        <div class="sub-tree">
+                                            <div class="tree-item"><span class="node">Source / Dest Input</span></div>
+                                            <div class="tree-item"><span class="node">Find Route Button</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tree-item">
+                                <span class="node component">🗺️ Map.jsx</span>
+                                <div class="sub-tree">
+                                    <div class="tree-item"><span class="node">🎨 GeoJSON Crime Layer</span></div>
+                                    <div class="tree-item"><span class="node">🖱️ Hover Events</span></div>
+                                    <div class="tree-item"><span class="node">📍 Route Polyline</span></div>
+                                    <div class="tree-item"><span class="node">🔎 Zoom Controls</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">React 18</span>
+                    <span class="tech-badge">Vite</span>
+                    <span class="tech-badge">React-Leaflet</span>
+                    <span class="tech-badge">Axios</span>
+                    <span class="tech-badge">TailwindCSS</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">SafeTravels India • Crime Prediction & Safe Route Planning • Python · FastAPI · React ·
+            Leaflet</div>
+    </div>
+</body>
+
+</html>
