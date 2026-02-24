@@ -1,0 +1,3617 @@
+{
+  "AIZAWL": {
+    "lat": 23.81791193756492,
+    "lng": 92.89042218981393,
+    "display_name": "AIZAWL"
+  },
+  "CHAMPHAI": {
+    "lat": 23.536916521130383,
+    "lng": 93.26214051644014,
+    "display_name": "CHAMPHAI"
+  },
+  "KOLASIB": {
+    "lat": 24.2004504564271,
+    "lng": 92.7303833491398,
+    "display_name": "KOLASIB"
+  },
+  "LAWNGTLAI": {
+    "lat": 22.38717625435167,
+    "lng": 92.7136088415323,
+    "display_name": "LAWNGTLAI"
+  },
+  "LUNGLEI": {
+    "lat": 22.977995959974944,
+    "lng": 92.65370219863958,
+    "display_name": "LUNGLEI"
+  },
+  "MAMIT": {
+    "lat": 23.75021169431063,
+    "lng": 92.46489138411727,
+    "display_name": "MAMIT"
+  },
+  "SAIHA": {
+    "lat": 22.382503372302743,
+    "lng": 93.01324412129264,
+    "display_name": "SAIHA"
+  },
+  "SERCHHIP": {
+    "lat": 23.26413838197291,
+    "lng": 92.95747204855391,
+    "display_name": "SERCHHIP"
+  },
+  "KHAWZAWL": {
+    "lat": 23.495858034940387,
+    "lng": 93.18994410103154,
+    "display_name": "KHAWZAWL"
+  },
+  "HNAHTHIAL": {
+    "lat": 22.945257761744553,
+    "lng": 92.9889438424073,
+    "display_name": "HNAHTHIAL"
+  },
+  "THIRUVALLUR": {
+    "lat": 13.233758278013283,
+    "lng": 79.94605864569908,
+    "display_name": "THIRUVALLUR"
+  },
+  "CHENNAI": {
+    "lat": 13.00814978423923,
+    "lng": 80.23049934576076,
+    "display_name": "CHENNAI"
+  },
+  "KRISHNAGIRI": {
+    "lat": 12.491100632539291,
+    "lng": 78.03133292350209,
+    "display_name": "KRISHNAGIRI"
+  },
+  "TIRUVANNAMALAI": {
+    "lat": 12.433329484283579,
+    "lng": 79.16516574567443,
+    "display_name": "TIRUVANNAMALAI"
+  },
+  "DHARMAPURI": {
+    "lat": 12.093773854291282,
+    "lng": 78.1976989347305,
+    "display_name": "DHARMAPURI"
+  },
+  "SALEM": {
+    "lat": 11.67427087818779,
+    "lng": 78.2290923889467,
+    "display_name": "SALEM"
+  },
+  "ERODE": {
+    "lat": 11.524311788868637,
+    "lng": 77.4128335330172,
+    "display_name": "ERODE"
+  },
+  "NILGIRIS": {
+    "lat": 11.455928436787744,
+    "lng": 76.64467491556981,
+    "display_name": "NILGIRIS"
+  },
+  "NAMAKKAL": {
+    "lat": 11.318574519639498,
+    "lng": 78.14029200270565,
+    "display_name": "NAMAKKAL"
+  },
+  "PERAMBALUR": {
+    "lat": 11.273343492261883,
+    "lng": 78.89695030417936,
+    "display_name": "PERAMBALUR"
+  },
+  "COIMBATORE": {
+    "lat": 10.878033568577306,
+    "lng": 76.97566500927294,
+    "display_name": "COIMBATORE"
+  },
+  "TIRUCHIRAPPALLI": {
+    "lat": 10.903272893056474,
+    "lng": 78.57618578805231,
+    "display_name": "TIRUCHIRAPPALLI"
+  },
+  "ARIYALUR": {
+    "lat": 11.163741471885634,
+    "lng": 79.2442758794861,
+    "display_name": "ARIYALUR"
+  },
+  "TIRUPPUR": {
+    "lat": 10.840852456797544,
+    "lng": 77.408327154323,
+    "display_name": "TIRUPPUR"
+  },
+  "THANJAVUR": {
+    "lat": 10.665055099109171,
+    "lng": 79.24091680964281,
+    "display_name": "THANJAVUR"
+  },
+  "KARUR": {
+    "lat": 10.845247282651888,
+    "lng": 78.13612766152886,
+    "display_name": "KARUR"
+  },
+  "THIRUVARUR": {
+    "lat": 10.706636611690087,
+    "lng": 79.5225823703367,
+    "display_name": "THIRUVARUR"
+  },
+  "DINDIGUL": {
+    "lat": 10.386879806948073,
+    "lng": 77.81888935815839,
+    "display_name": "DINDIGUL"
+  },
+  "MADURAI": {
+    "lat": 9.927038212682639,
+    "lng": 78.0093623934143,
+    "display_name": "MADURAI"
+  },
+  "THENI": {
+    "lat": 9.884601483960706,
+    "lng": 77.43703683946471,
+    "display_name": "THENI"
+  },
+  "VIRUDHUNAGAR": {
+    "lat": 9.498108465785304,
+    "lng": 77.90031342676482,
+    "display_name": "VIRUDHUNAGAR"
+  },
+  "THOOTHUKKUDI": {
+    "lat": 8.894308773527655,
+    "lng": 78.00530779019518,
+    "display_name": "THOOTHUKKUDI"
+  },
+  "KANYAKUMARI": {
+    "lat": 8.308281582374626,
+    "lng": 77.35807454938366,
+    "display_name": "KANYAKUMARI"
+  },
+  "VILUPPURAM": {
+    "lat": 12.12033222801339,
+    "lng": 79.53575792465449,
+    "display_name": "VILUPPURAM"
+  },
+  "CUDDALORE": {
+    "lat": 11.54006939417811,
+    "lng": 79.45125607968188,
+    "display_name": "CUDDALORE"
+  },
+  "PUDUKKOTTAI": {
+    "lat": 10.361865844577599,
+    "lng": 78.88048989644184,
+    "display_name": "PUDUKKOTTAI"
+  },
+  "SIVAGANGA": {
+    "lat": 9.92733744024807,
+    "lng": 78.58784006833797,
+    "display_name": "SIVAGANGA"
+  },
+  "RAMANATHAPURAM": {
+    "lat": 9.446590426732026,
+    "lng": 78.68066723408904,
+    "display_name": "RAMANATHAPURAM"
+  },
+  "NAGAPATTINAM": {
+    "lat": 10.815375793791906,
+    "lng": 79.73084656174237,
+    "display_name": "NAGAPATTINAM"
+  },
+  "KALLAKURICHI": {
+    "lat": 11.798098562783974,
+    "lng": 79.01612845488222,
+    "display_name": "KALLAKURICHI"
+  },
+  "TENKASI": {
+    "lat": 9.086824203940946,
+    "lng": 77.45625773315138,
+    "display_name": "TENKASI"
+  },
+  "TIRUNELVELI": {
+    "lat": 8.572994621924575,
+    "lng": 77.60527097113011,
+    "display_name": "TIRUNELVELI"
+  },
+  "VELLORE": {
+    "lat": 12.903426258486057,
+    "lng": 78.94708801566162,
+    "display_name": "VELLORE"
+  },
+  "RANIPET": {
+    "lat": 12.956297370161398,
+    "lng": 79.45829058954067,
+    "display_name": "RANIPET"
+  },
+  "TIRUPATHUR": {
+    "lat": 12.579458683156457,
+    "lng": 78.63252064715905,
+    "display_name": "TIRUPATHUR"
+  },
+  "KANCHEEPURAM": {
+    "lat": 12.831458310278908,
+    "lng": 79.83257757159595,
+    "display_name": "KANCHEEPURAM"
+  },
+  "CHENGALPATTU": {
+    "lat": 12.574724506044108,
+    "lng": 79.9983794723528,
+    "display_name": "CHENGALPATTU"
+  },
+  "BURHANPUR": {
+    "lat": 21.370514371359985,
+    "lng": 76.37360983005308,
+    "display_name": "BURHANPUR"
+  },
+  "GONDIA": {
+    "lat": 21.157832287083604,
+    "lng": 80.21339383269807,
+    "display_name": "GONDIA"
+  },
+  "BHANDARA": {
+    "lat": 21.121418078543975,
+    "lng": 79.75832814013378,
+    "display_name": "BHANDARA"
+  },
+  "JALGAON": {
+    "lat": 20.936184744436996,
+    "lng": 75.49121419803967,
+    "display_name": "JALGAON"
+  },
+  "MAHASAMUND": {
+    "lat": 21.20681568886782,
+    "lng": 82.60994909892052,
+    "display_name": "MAHASAMUND"
+  },
+  "WARDHA": {
+    "lat": 20.798152260772195,
+    "lng": 78.58785137046293,
+    "display_name": "WARDHA"
+  },
+  "BULDHANA": {
+    "lat": 20.517445665864685,
+    "lng": 76.40826380994828,
+    "display_name": "BULDHANA"
+  },
+  "VALSAD": {
+    "lat": 20.42521988337406,
+    "lng": 73.12080028648319,
+    "display_name": "VALSAD"
+  },
+  "AKOLA": {
+    "lat": 20.750061163811047,
+    "lng": 77.05894078062512,
+    "display_name": "AKOLA"
+  },
+  "BHADRAK": {
+    "lat": 20.984859533301954,
+    "lng": 86.63105900000765,
+    "display_name": "BHADRAK"
+  },
+  "DHENKANAL": {
+    "lat": 20.828611403884338,
+    "lng": 85.52327684209705,
+    "display_name": "DHENKANAL"
+  },
+  "JAJPUR": {
+    "lat": 20.844565980221923,
+    "lng": 86.1549186356782,
+    "display_name": "JAJPUR"
+  },
+  "SUBARNAPUR": {
+    "lat": 20.931942821303604,
+    "lng": 83.82593221762318,
+    "display_name": "SUBARNAPUR"
+  },
+  "NUAPADA": {
+    "lat": 20.468611546395007,
+    "lng": 82.57547615250056,
+    "display_name": "NUAPADA"
+  },
+  "BALANGIR": {
+    "lat": 20.58151196262726,
+    "lng": 83.17088286918778,
+    "display_name": "BALANGIR"
+  },
+  "NASHIK": {
+    "lat": 20.257359946512747,
+    "lng": 74.07144156371065,
+    "display_name": "NASHIK"
+  },
+  "BOUDH": {
+    "lat": 20.645673311076088,
+    "lng": 84.17095733371114,
+    "display_name": "BOUDH"
+  },
+  "GADCHIROLI": {
+    "lat": 19.78839541533046,
+    "lng": 80.2461854412061,
+    "display_name": "GADCHIROLI"
+  },
+  "WASHIM": {
+    "lat": 20.234593558500222,
+    "lng": 77.21446747319627,
+    "display_name": "WASHIM"
+  },
+  "CUTTACK": {
+    "lat": 20.451632649487312,
+    "lng": 85.69934220359286,
+    "display_name": "CUTTACK"
+  },
+  "CHANDRAPUR": {
+    "lat": 20.114667838405445,
+    "lng": 79.43981658339648,
+    "display_name": "CHANDRAPUR"
+  },
+  "YAVATMAL": {
+    "lat": 20.085161634583407,
+    "lng": 78.16246641718833,
+    "display_name": "YAVATMAL"
+  },
+  "KANDHAMAL": {
+    "lat": 20.129772981656014,
+    "lng": 84.04762224226914,
+    "display_name": "KANDHAMAL"
+  },
+  "JALNA": {
+    "lat": 19.81126963437864,
+    "lng": 75.97892191862668,
+    "display_name": "JALNA"
+  },
+  "NAYAGARH": {
+    "lat": 20.213625598048495,
+    "lng": 85.00174213064837,
+    "display_name": "NAYAGARH"
+  },
+  "UTTAR BASTAR KANKER": {
+    "lat": 20.141846767835382,
+    "lng": 81.1296490133274,
+    "display_name": "UTTAR BASTAR KANKER"
+  },
+  "KHORDHA": {
+    "lat": 20.09012994913013,
+    "lng": 85.51405294028916,
+    "display_name": "KHORDHA"
+  },
+  "KALAHANDI": {
+    "lat": 19.86396424655825,
+    "lng": 83.10592174044339,
+    "display_name": "KALAHANDI"
+  },
+  "JAGATSINGHPUR": {
+    "lat": 20.222295690418967,
+    "lng": 86.3375884351037,
+    "display_name": "JAGATSINGHPUR"
+  },
+  "PURI": {
+    "lat": 19.878165612020148,
+    "lng": 85.72754823354747,
+    "display_name": "PURI"
+  },
+  "AHMEDNAGAR": {
+    "lat": 19.20320071149273,
+    "lng": 74.6705998073653,
+    "display_name": "AHMEDNAGAR"
+  },
+  "NABARANGAPUR": {
+    "lat": 19.575756911663998,
+    "lng": 82.33357953825178,
+    "display_name": "NABARANGAPUR"
+  },
+  "HINGOLI": {
+    "lat": 19.623561603715657,
+    "lng": 77.09255243616575,
+    "display_name": "HINGOLI"
+  },
+  "RAYAGADA": {
+    "lat": 19.36445559657536,
+    "lng": 83.51913128924932,
+    "display_name": "RAYAGADA"
+  },
+  "NANDED": {
+    "lat": 19.117690621556985,
+    "lng": 77.61956407204242,
+    "display_name": "NANDED"
+  },
+  "NARAYANPUR": {
+    "lat": 19.56992284892406,
+    "lng": 81.08902975312013,
+    "display_name": "NARAYANPUR"
+  },
+  "PARBHANI": {
+    "lat": 19.265581643888215,
+    "lng": 76.67446666810187,
+    "display_name": "PARBHANI"
+  },
+  "PUNE": {
+    "lat": 18.568669315295825,
+    "lng": 74.06452826937597,
+    "display_name": "PUNE"
+  },
+  "BEED": {
+    "lat": 18.94701166861575,
+    "lng": 75.8319476590622,
+    "display_name": "BEED"
+  },
+  "MUMBAI": {
+    "lat": 19.093178373232302,
+    "lng": 72.87558421002278,
+    "display_name": "MUMBAI"
+  },
+  "KORAPUT": {
+    "lat": 18.813902446950944,
+    "lng": 82.71491172353205,
+    "display_name": "KORAPUT"
+  },
+  "SRIKAKULAM": {
+    "lat": 18.591571945445637,
+    "lng": 84.01225327182601,
+    "display_name": "SRIKAKULAM"
+  },
+  "VIZIANAGARAM": {
+    "lat": 18.467701857955884,
+    "lng": 83.3772809394515,
+    "display_name": "VIZIANAGARAM"
+  },
+  "LATUR": {
+    "lat": 18.3767965317703,
+    "lng": 76.76519915065467,
+    "display_name": "LATUR"
+  },
+  "OSMANABAD": {
+    "lat": 18.190917919235456,
+    "lng": 76.04431705247055,
+    "display_name": "OSMANABAD"
+  },
+  "MALKANGIRI": {
+    "lat": 18.256967868327045,
+    "lng": 81.94672765183326,
+    "display_name": "MALKANGIRI"
+  },
+  "SOLAPUR": {
+    "lat": 17.795817776605293,
+    "lng": 75.48555970333909,
+    "display_name": "SOLAPUR"
+  },
+  "VISAKHAPATNAM": {
+    "lat": 17.89197995884053,
+    "lng": 82.69455523005443,
+    "display_name": "VISAKHAPATNAM"
+  },
+  "BIDAR": {
+    "lat": 17.95448970447439,
+    "lng": 77.22186246371265,
+    "display_name": "BIDAR"
+  },
+  "SATARA": {
+    "lat": 17.6668192196683,
+    "lng": 74.17799535105712,
+    "display_name": "SATARA"
+  },
+  "RATNAGIRI": {
+    "lat": 17.269054727303484,
+    "lng": 73.4615055124138,
+    "display_name": "RATNAGIRI"
+  },
+  "KALABURAGI": {
+    "lat": 17.256954691485817,
+    "lng": 76.85865993788069,
+    "display_name": "KALABURAGI"
+  },
+  "SANGLI": {
+    "lat": 17.11224442419762,
+    "lng": 74.77440623922824,
+    "display_name": "SANGLI"
+  },
+  "KOLHAPUR": {
+    "lat": 16.475173362491656,
+    "lng": 74.15936509961237,
+    "display_name": "KOLHAPUR"
+  },
+  "KRISHNA": {
+    "lat": 16.548523735396344,
+    "lng": 80.80155719230143,
+    "display_name": "KRISHNA"
+  },
+  "BELAGAVI": {
+    "lat": 16.11974170041018,
+    "lng": 74.82195820817029,
+    "display_name": "BELAGAVI"
+  },
+  "YADGIR": {
+    "lat": 16.625589158138858,
+    "lng": 76.91236348846103,
+    "display_name": "YADGIR"
+  },
+  "BAGALKOTE": {
+    "lat": 16.214492871765586,
+    "lng": 75.62898548257954,
+    "display_name": "BAGALKOTE"
+  },
+  "SINDHUDURG": {
+    "lat": 16.12640001140991,
+    "lng": 73.74216469824117,
+    "display_name": "SINDHUDURG"
+  },
+  "GUNTUR": {
+    "lat": 16.29327820541238,
+    "lng": 80.08283053734645,
+    "display_name": "GUNTUR"
+  },
+  "EAST GODAVARI": {
+    "lat": 17.27210427121263,
+    "lng": 81.89408015511432,
+    "display_name": "EAST GODAVARI"
+  },
+  "RAICHUR": {
+    "lat": 16.09322766132284,
+    "lng": 76.89677333491206,
+    "display_name": "RAICHUR"
+  },
+  "PRAKASAM": {
+    "lat": 15.61881774829858,
+    "lng": 79.51499588480364,
+    "display_name": "PRAKASAM"
+  },
+  "KURNOOL": {
+    "lat": 15.53127871780914,
+    "lng": 77.99716101465506,
+    "display_name": "KURNOOL"
+  },
+  "KOPPAL": {
+    "lat": 15.560684661139707,
+    "lng": 76.22415888874073,
+    "display_name": "KOPPAL"
+  },
+  "GADAG": {
+    "lat": 15.433601881975727,
+    "lng": 75.66487176747317,
+    "display_name": "GADAG"
+  },
+  "NORTH GOA": {
+    "lat": 15.581128897461133,
+    "lng": 73.97561639530251,
+    "display_name": "NORTH GOA"
+  },
+  "BALLARI": {
+    "lat": 15.105295543516464,
+    "lng": 76.52627240851382,
+    "display_name": "BALLARI"
+  },
+  "DHARWAD": {
+    "lat": 15.38763357330609,
+    "lng": 75.15607069376829,
+    "display_name": "DHARWAD"
+  },
+  "UTTARA KANNADA": {
+    "lat": 14.795539078221056,
+    "lng": 74.61823895769906,
+    "display_name": "UTTARA KANNADA"
+  },
+  "SOUTH GOA": {
+    "lat": 15.217570244976072,
+    "lng": 74.11349310163843,
+    "display_name": "SOUTH GOA"
+  },
+  "HAVERI": {
+    "lat": 14.733041589695395,
+    "lng": 75.42404623472866,
+    "display_name": "HAVERI"
+  },
+  "ANANTAPUR": {
+    "lat": 14.482921337762507,
+    "lng": 77.57194383398758,
+    "display_name": "ANANTAPUR"
+  },
+  "S.P.S. NELLORE": {
+    "lat": 14.4139094653379,
+    "lng": 79.73883522324948,
+    "display_name": "S.P.S. NELLORE"
+  },
+  "CHITRADURGA": {
+    "lat": 14.163029638185758,
+    "lng": 76.51316389608156,
+    "display_name": "CHITRADURGA"
+  },
+  "DAVANAGERE": {
+    "lat": 14.403261894364805,
+    "lng": 75.9509201687335,
+    "display_name": "DAVANAGERE"
+  },
+  "SHIVAMOGGA": {
+    "lat": 14.046252895180581,
+    "lng": 75.21550513443889,
+    "display_name": "SHIVAMOGGA"
+  },
+  "UDUPI": {
+    "lat": 13.49683714900747,
+    "lng": 74.8734216424915,
+    "display_name": "UDUPI"
+  },
+  "CHIKKAMAGALURU": {
+    "lat": 13.453652006650822,
+    "lng": 75.69151630140564,
+    "display_name": "CHIKKAMAGALURU"
+  },
+  "CHIKKABALLAPURA": {
+    "lat": 13.585236587679548,
+    "lng": 77.84201994629234,
+    "display_name": "CHIKKABALLAPURA"
+  },
+  "HASSAN": {
+    "lat": 12.995890960384314,
+    "lng": 76.10706421559841,
+    "display_name": "HASSAN"
+  },
+  "KOLAR": {
+    "lat": 13.140339501150542,
+    "lng": 78.21619848349229,
+    "display_name": "KOLAR"
+  },
+  "BENGALURU RURAL": {
+    "lat": 13.229334631009664,
+    "lng": 77.57108713941614,
+    "display_name": "BENGALURU RURAL"
+  },
+  "DAKSHINA KANNADA": {
+    "lat": 12.848555614164038,
+    "lng": 75.24917680327155,
+    "display_name": "DAKSHINA KANNADA"
+  },
+  "BENGALURU URBAN": {
+    "lat": 12.954938595565993,
+    "lng": 77.5965694720231,
+    "display_name": "BENGALURU URBAN"
+  },
+  "KASARAGOD": {
+    "lat": 12.44952926949993,
+    "lng": 75.15942646660463,
+    "display_name": "KASARAGOD"
+  },
+  "KODAGU": {
+    "lat": 12.324435111376507,
+    "lng": 75.80301255257694,
+    "display_name": "KODAGU"
+  },
+  "CHAMARAJANAGARA": {
+    "lat": 11.961820801712411,
+    "lng": 77.10396277414314,
+    "display_name": "CHAMARAJANAGARA"
+  },
+  "WAYANAD": {
+    "lat": 11.707667789015828,
+    "lng": 76.10130007637046,
+    "display_name": "WAYANAD"
+  },
+  "KOZHIKODE": {
+    "lat": 11.48583384687357,
+    "lng": 75.83054464384124,
+    "display_name": "KOZHIKODE"
+  },
+  "MALAPPURAM": {
+    "lat": 11.13679913956873,
+    "lng": 76.15479451410864,
+    "display_name": "MALAPPURAM"
+  },
+  "PALAKKAD": {
+    "lat": 10.793472260931896,
+    "lng": 76.55504344387143,
+    "display_name": "PALAKKAD"
+  },
+  "THRISSUR": {
+    "lat": 10.468166321053573,
+    "lng": 76.31803664354486,
+    "display_name": "THRISSUR"
+  },
+  "IDUKKI": {
+    "lat": 9.847876912653234,
+    "lng": 77.05489072795179,
+    "display_name": "IDUKKI"
+  },
+  "ERNAKULAM": {
+    "lat": 10.080576490957322,
+    "lng": 76.5450873678036,
+    "display_name": "ERNAKULAM"
+  },
+  "ALAPPUZHA": {
+    "lat": 9.41481793451923,
+    "lng": 76.45483743977078,
+    "display_name": "ALAPPUZHA"
+  },
+  "KOTTAYAM": {
+    "lat": 9.64053445173546,
+    "lng": 76.64175687604278,
+    "display_name": "KOTTAYAM"
+  },
+  "PATHANAMTHITTA": {
+    "lat": 9.288441672622689,
+    "lng": 76.93613463564606,
+    "display_name": "PATHANAMTHITTA"
+  },
+  "KOLLAM": {
+    "lat": 8.96009598098745,
+    "lng": 76.86957873631408,
+    "display_name": "KOLLAM"
+  },
+  "THIRUVANANTHAPURAM": {
+    "lat": 8.607191295184274,
+    "lng": 77.01499272003605,
+    "display_name": "THIRUVANANTHAPURAM"
+  },
+  "WEST GODAVARI": {
+    "lat": 16.935397854810148,
+    "lng": 81.38049953025305,
+    "display_name": "WEST GODAVARI"
+  },
+  "DAKSHIN BASTAR DANTEWADA": {
+    "lat": 18.86359867483507,
+    "lng": 81.37920186934402,
+    "display_name": "DAKSHIN BASTAR DANTEWADA"
+  },
+  "BASTAR": {
+    "lat": 19.08431384800752,
+    "lng": 81.87265351604782,
+    "display_name": "BASTAR"
+  },
+  "KONDAGAON": {
+    "lat": 19.744486983305098,
+    "lng": 81.666568727983,
+    "display_name": "KONDAGAON"
+  },
+  "GARIABAND": {
+    "lat": 20.44618194222051,
+    "lng": 82.23706473711214,
+    "display_name": "GARIABAND"
+  },
+  "RAIPUR": {
+    "lat": 21.28599966298204,
+    "lng": 81.8231453632646,
+    "display_name": "RAIPUR"
+  },
+  "DURG": {
+    "lat": 21.21778982971422,
+    "lng": 81.38529290032552,
+    "display_name": "DURG"
+  },
+  "THANE": {
+    "lat": 19.362418524071078,
+    "lng": 73.32058878908164,
+    "display_name": "THANE"
+  },
+  "ADILABAD": {
+    "lat": 19.523183567672813,
+    "lng": 78.56759495517838,
+    "display_name": "ADILABAD"
+  },
+  "HYDERABAD": {
+    "lat": 17.392433951657708,
+    "lng": 78.4622309315978,
+    "display_name": "HYDERABAD"
+  },
+  "JAGTIAL": {
+    "lat": 18.832307285425696,
+    "lng": 78.87477710358654,
+    "display_name": "JAGTIAL"
+  },
+  "JANGAON": {
+    "lat": 17.734711550570786,
+    "lng": 79.27387384333255,
+    "display_name": "JANGAON"
+  },
+  "MULUGU": {
+    "lat": 18.292146882365806,
+    "lng": 80.32610075171169,
+    "display_name": "MULUGU"
+  },
+  "JOGULAMBA GADWAL": {
+    "lat": 16.067760966974966,
+    "lng": 77.78513584047516,
+    "display_name": "JOGULAMBA GADWAL"
+  },
+  "KAMAREDDY": {
+    "lat": 18.319809020805753,
+    "lng": 78.05763290964352,
+    "display_name": "KAMAREDDY"
+  },
+  "KARIMNAGAR": {
+    "lat": 18.381667990906074,
+    "lng": 79.22769113188434,
+    "display_name": "KARIMNAGAR"
+  },
+  "KHAMMAM": {
+    "lat": 17.204621946455493,
+    "lng": 80.36445583683505,
+    "display_name": "KHAMMAM"
+  },
+  "KOMARAM BHEEM": {
+    "lat": 19.356991852365706,
+    "lng": 79.41737544786545,
+    "display_name": "KOMARAM BHEEM"
+  },
+  "MAHABUBABAD": {
+    "lat": 17.663789897385172,
+    "lng": 79.98009497741533,
+    "display_name": "MAHABUBABAD"
+  },
+  "MAHABUBNAGAR": {
+    "lat": 16.751205915155296,
+    "lng": 77.99114955440294,
+    "display_name": "MAHABUBNAGAR"
+  },
+  "MANCHERIAL": {
+    "lat": 18.99368525574819,
+    "lng": 79.51916140911602,
+    "display_name": "MANCHERIAL"
+  },
+  "MEDAK": {
+    "lat": 17.954088486526402,
+    "lng": 78.26865320511047,
+    "display_name": "MEDAK"
+  },
+  "MEDCHAL MALKAJGIRI": {
+    "lat": 17.541319062069647,
+    "lng": 78.55609502528415,
+    "display_name": "MEDCHAL MALKAJGIRI"
+  },
+  "NAGARKURNOOL": {
+    "lat": 16.388169578464417,
+    "lng": 78.59331415988947,
+    "display_name": "NAGARKURNOOL"
+  },
+  "NALGONDA": {
+    "lat": 16.874572807204153,
+    "lng": 79.19458260704063,
+    "display_name": "NALGONDA"
+  },
+  "NIRMAL": {
+    "lat": 19.114683254257354,
+    "lng": 78.31659342200119,
+    "display_name": "NIRMAL"
+  },
+  "NIZAMABAD": {
+    "lat": 18.700615891655087,
+    "lng": 78.20844178149083,
+    "display_name": "NIZAMABAD"
+  },
+  "PEDDAPALLI": {
+    "lat": 18.62183559940757,
+    "lng": 79.45470657084803,
+    "display_name": "PEDDAPALLI"
+  },
+  "RAJANNA SIRCILLA": {
+    "lat": 18.41147644287235,
+    "lng": 78.75913139154876,
+    "display_name": "RAJANNA SIRCILLA"
+  },
+  "RANGA REDDY": {
+    "lat": 17.12644226722808,
+    "lng": 78.41498542739758,
+    "display_name": "RANGA REDDY"
+  },
+  "SANGAREDDY": {
+    "lat": 17.77746160779841,
+    "lng": 77.87539704812706,
+    "display_name": "SANGAREDDY"
+  },
+  "SIDDIPET": {
+    "lat": 18.007402492650314,
+    "lng": 78.84683811277813,
+    "display_name": "SIDDIPET"
+  },
+  "SURYAPET": {
+    "lat": 17.086848030076037,
+    "lng": 79.75316969727038,
+    "display_name": "SURYAPET"
+  },
+  "VIKARABAD": {
+    "lat": 17.253028368423216,
+    "lng": 77.7434155715344,
+    "display_name": "VIKARABAD"
+  },
+  "WANAPARTHY": {
+    "lat": 16.28799907175923,
+    "lng": 78.04593393328476,
+    "display_name": "WANAPARTHY"
+  },
+  "WARANGAL RURAL": {
+    "lat": 17.92262415495383,
+    "lng": 79.7523551053664,
+    "display_name": "WARANGAL RURAL"
+  },
+  "WARANGAL URBAN": {
+    "lat": 18.025168657629884,
+    "lng": 79.47880599409949,
+    "display_name": "WARANGAL URBAN"
+  },
+  "YADADRI BHUVANAGIRI": {
+    "lat": 17.453670494577647,
+    "lng": 78.98201615448647,
+    "display_name": "YADADRI BHUVANAGIRI"
+  },
+  "SOUTH 24 PARGANAS": {
+    "lat": 22.143039173291978,
+    "lng": 88.52763114533325,
+    "display_name": "SOUTH 24 PARGANAS"
+  },
+  "AMRELI": {
+    "lat": 21.425934629649678,
+    "lng": 71.25369210904594,
+    "display_name": "AMRELI"
+  },
+  "ANGUL": {
+    "lat": 20.98988502502275,
+    "lng": 84.90997881679469,
+    "display_name": "ANGUL"
+  },
+  "DANG": {
+    "lat": 20.80028984372033,
+    "lng": 73.69976090241397,
+    "display_name": "DANG"
+  },
+  "DHAMTARI": {
+    "lat": 20.554822448549714,
+    "lng": 81.80893285207712,
+    "display_name": "DHAMTARI"
+  },
+  "KENDRAPARA": {
+    "lat": 20.556501943953204,
+    "lng": 86.6138006000197,
+    "display_name": "KENDRAPARA"
+  },
+  "DADRA AND NAGAR HAVELI": {
+    "lat": 20.206472315129115,
+    "lng": 73.06245116355751,
+    "display_name": "DADRA AND NAGAR HAVELI"
+  },
+  "PALGHAR": {
+    "lat": 19.795287924122963,
+    "lng": 73.0096825553127,
+    "display_name": "PALGHAR"
+  },
+  "GANJAM": {
+    "lat": 19.62136674916414,
+    "lng": 84.67556297890499,
+    "display_name": "GANJAM"
+  },
+  "GAJAPATI": {
+    "lat": 19.184018453583523,
+    "lng": 84.16388702400387,
+    "display_name": "GAJAPATI"
+  },
+  "Y.S.R. KADAPA": {
+    "lat": 14.467381246860478,
+    "lng": 78.78091102452824,
+    "display_name": "Y.S.R. KADAPA"
+  },
+  "TUMAKURU": {
+    "lat": 13.52232020349814,
+    "lng": 76.94461032542128,
+    "display_name": "TUMAKURU"
+  },
+  "CHITTOOR": {
+    "lat": 13.466510142853231,
+    "lng": 79.00731982426562,
+    "display_name": "CHITTOOR"
+  },
+  "RAMANAGARA": {
+    "lat": 12.681397107918569,
+    "lng": 77.33626222236464,
+    "display_name": "RAMANAGARA"
+  },
+  "MANDYA": {
+    "lat": 12.616500109224864,
+    "lng": 76.79395177316827,
+    "display_name": "MANDYA"
+  },
+  "MYSURU": {
+    "lat": 12.210469971483015,
+    "lng": 76.44986156284023,
+    "display_name": "MYSURU"
+  },
+  "KANNUR": {
+    "lat": 11.997535048094376,
+    "lng": 75.52912092522396,
+    "display_name": "KANNUR"
+  },
+  "PUDUCHERRY": {
+    "lat": 11.90318909084695,
+    "lng": 79.77606483807816,
+    "display_name": "PUDUCHERRY"
+  },
+  "BALOD": {
+    "lat": 20.739890390849325,
+    "lng": 81.18318142217427,
+    "display_name": "BALOD"
+  },
+  "BHADRADRI KOTHAGUDEM": {
+    "lat": 17.698046387569207,
+    "lng": 80.71029725749322,
+    "display_name": "BHADRADRI KOTHAGUDEM"
+  },
+  "VADODARA": {
+    "lat": 22.24185498318004,
+    "lng": 73.24296178059912,
+    "display_name": "VADODARA"
+  },
+  "PASCHIM MEDINIPUR": {
+    "lat": 22.440185387134157,
+    "lng": 87.41907393900291,
+    "display_name": "PASCHIM MEDINIPUR"
+  },
+  "SEONI": {
+    "lat": 22.316528712189825,
+    "lng": 79.69024904070892,
+    "display_name": "SEONI"
+  },
+  "ALIRAJPUR": {
+    "lat": 22.31509992894214,
+    "lng": 74.36310044672501,
+    "display_name": "ALIRAJPUR"
+  },
+  "CHHINDWARA": {
+    "lat": 22.12515228265087,
+    "lng": 78.85296987112213,
+    "display_name": "CHHINDWARA"
+  },
+  "HARDA": {
+    "lat": 22.231569729313225,
+    "lng": 77.12125657866441,
+    "display_name": "HARDA"
+  },
+  "KHARGONE": {
+    "lat": 21.917488161474168,
+    "lng": 75.77153106060922,
+    "display_name": "KHARGONE"
+  },
+  "PURBA MEDINIPUR": {
+    "lat": 22.030214432353546,
+    "lng": 87.77446769092539,
+    "display_name": "PURBA MEDINIPUR"
+  },
+  "MAYURBHANJ": {
+    "lat": 21.8955636133192,
+    "lng": 86.41011766470042,
+    "display_name": "MAYURBHANJ"
+  },
+  "BHARUCH": {
+    "lat": 21.7816755505358,
+    "lng": 72.93759375075344,
+    "display_name": "BHARUCH"
+  },
+  "SUNDARGARH": {
+    "lat": 22.07938430496581,
+    "lng": 84.50273132970291,
+    "display_name": "SUNDARGARH"
+  },
+  "KABEERDHAM": {
+    "lat": 22.099133450358792,
+    "lng": 81.22580044395289,
+    "display_name": "KABEERDHAM"
+  },
+  "KHANDWA": {
+    "lat": 21.93309309303056,
+    "lng": 76.56616114090325,
+    "display_name": "KHANDWA"
+  },
+  "PORBANDAR": {
+    "lat": 21.662692452132454,
+    "lng": 69.7745940320732,
+    "display_name": "PORBANDAR"
+  },
+  "BALAGHAT": {
+    "lat": 21.882787026742367,
+    "lng": 80.361605663166,
+    "display_name": "BALAGHAT"
+  },
+  "NARMADA": {
+    "lat": 21.733971203677232,
+    "lng": 73.64922438662104,
+    "display_name": "NARMADA"
+  },
+  "BARWANI": {
+    "lat": 21.787158334286403,
+    "lng": 75.01909619687962,
+    "display_name": "BARWANI"
+  },
+  "JANJGIR CHAMPA": {
+    "lat": 21.931723179455272,
+    "lng": 82.72704020843076,
+    "display_name": "JANJGIR CHAMPA"
+  },
+  "NANDURBAR": {
+    "lat": 21.55077921043518,
+    "lng": 74.21576312611866,
+    "display_name": "NANDURBAR"
+  },
+  "KENDUJHAR": {
+    "lat": 21.534106974719737,
+    "lng": 85.70659010000244,
+    "display_name": "KENDUJHAR"
+  },
+  "BALASORE": {
+    "lat": 21.49448196427551,
+    "lng": 86.91290999619703,
+    "display_name": "BALASORE"
+  },
+  "JHARSUGUDA": {
+    "lat": 21.809023701677337,
+    "lng": 83.96980600353493,
+    "display_name": "JHARSUGUDA"
+  },
+  "BAMETARA": {
+    "lat": 21.70695036266274,
+    "lng": 81.52744498610714,
+    "display_name": "BAMETARA"
+  },
+  "RAJNANDGAON": {
+    "lat": 21.049662518111095,
+    "lng": 80.82230756546656,
+    "display_name": "RAJNANDGAON"
+  },
+  "AMRAVATI": {
+    "lat": 21.184309153094876,
+    "lng": 77.56961347444506,
+    "display_name": "AMRAVATI"
+  },
+  "SURAT": {
+    "lat": 21.2625398874025,
+    "lng": 73.07565870794004,
+    "display_name": "SURAT"
+  },
+  "DHULE": {
+    "lat": 21.10919341781362,
+    "lng": 74.59841750256653,
+    "display_name": "DHULE"
+  },
+  "TAPI": {
+    "lat": 21.192811630063293,
+    "lng": 73.62619531090976,
+    "display_name": "TAPI"
+  },
+  "BARGARH": {
+    "lat": 21.216368687044067,
+    "lng": 83.3463562317775,
+    "display_name": "BARGARH"
+  },
+  "NAGPUR": {
+    "lat": 21.179457883077234,
+    "lng": 79.08490791741784,
+    "display_name": "NAGPUR"
+  },
+  "BALODA BAZAR": {
+    "lat": 21.57870022880418,
+    "lng": 82.32773904305256,
+    "display_name": "BALODA BAZAR"
+  },
+  "MUNGELI": {
+    "lat": 22.22824769556971,
+    "lng": 81.72994611567314,
+    "display_name": "MUNGELI"
+  },
+  "BOTAD": {
+    "lat": 22.11397030058177,
+    "lng": 71.6924087077202,
+    "display_name": "BOTAD"
+  },
+  "CHHOTA UDAIPUR": {
+    "lat": 22.21929553065533,
+    "lng": 73.87164004285661,
+    "display_name": "CHHOTA UDAIPUR"
+  },
+  "GIR SOMNATH": {
+    "lat": 20.965505253603713,
+    "lng": 70.77136616909458,
+    "display_name": "GIR SOMNATH"
+  },
+  "JHARGRAM": {
+    "lat": 22.35733346277319,
+    "lng": 86.95288065342433,
+    "display_name": "JHARGRAM"
+  },
+  "RAJKOT": {
+    "lat": 22.02695201739411,
+    "lng": 70.75189543778049,
+    "display_name": "RAJKOT"
+  },
+  "BHAVNAGAR": {
+    "lat": 21.58806827802833,
+    "lng": 71.91128019765421,
+    "display_name": "BHAVNAGAR"
+  },
+  "BETUL": {
+    "lat": 21.88360143618156,
+    "lng": 77.8737181730798,
+    "display_name": "BETUL"
+  },
+  "JUNAGADH": {
+    "lat": 21.377080938324855,
+    "lng": 70.40821407373616,
+    "display_name": "JUNAGADH"
+  },
+  "DEOGARH": {
+    "lat": 21.470847978741016,
+    "lng": 84.78171240784698,
+    "display_name": "DEOGARH"
+  },
+  "JAMNAGAR": {
+    "lat": 22.33229454647109,
+    "lng": 70.20898902136139,
+    "display_name": "JAMNAGAR"
+  },
+  "DEVBHUMI DWARKA": {
+    "lat": 22.11915350685589,
+    "lng": 69.46241542186105,
+    "display_name": "DEVBHUMI DWARKA"
+  },
+  "AURANGABAD_MAHARASHTRA": {
+    "lat": 20.024210624274193,
+    "lng": 75.27436031112397,
+    "display_name": "AURANGABAD"
+  },
+  "VIJAYAPURA": {
+    "lat": 16.797495291217015,
+    "lng": 75.94643012378478,
+    "display_name": "VIJAYAPURA"
+  },
+  "BIJAPUR": {
+    "lat": 18.84151819561024,
+    "lng": 80.78125229903374,
+    "display_name": "BIJAPUR"
+  },
+  "RAIGAD": {
+    "lat": 18.516169115911982,
+    "lng": 73.21742909754175,
+    "display_name": "RAIGAD"
+  },
+  "RAIGARH": {
+    "lat": 22.076256657451566,
+    "lng": 83.30257102779426,
+    "display_name": "RAIGARH"
+  },
+  "BILASPUR_CHHATTISGARH": {
+    "lat": 22.401566986616775,
+    "lng": 82.07055424151532,
+    "display_name": "BILASPUR"
+  },
+  "KARAIKAL": {
+    "lat": 10.936171144192548,
+    "lng": 79.79939257978253,
+    "display_name": "KARAIKAL"
+  },
+  "MAHE": {
+    "lat": 11.726945252825624,
+    "lng": 75.54463843901235,
+    "display_name": "MAHE"
+  },
+  "YANAM": {
+    "lat": 16.720449920237332,
+    "lng": 82.23527494111067,
+    "display_name": "YANAM"
+  },
+  "SAMBALPUR": {
+    "lat": 21.452510152218174,
+    "lng": 84.27740232997301,
+    "display_name": "SAMBALPUR"
+  },
+  "NAVSARI": {
+    "lat": 20.81210087438146,
+    "lng": 73.10005667111453,
+    "display_name": "NAVSARI"
+  },
+  "LAKSHADWEEP_LAKSHADWEEP": {
+    "lat": 8.270812709952668,
+    "lng": 73.03829964698421,
+    "display_name": "LAKSHADWEEP"
+  },
+  "DAMAN": {
+    "lat": 20.42776580328026,
+    "lng": 72.85071927776184,
+    "display_name": "DAMAN"
+  },
+  "DIU": {
+    "lat": 20.728837015248907,
+    "lng": 70.96574045878278,
+    "display_name": "DIU"
+  },
+  "JAYASHANKAR BHUPALAPALLY": {
+    "lat": 18.5066562703793,
+    "lng": 79.92759235490198,
+    "display_name": "JAYASHANKAR BHUPALAPALLY"
+  },
+  "NARAYANPET": {
+    "lat": 16.641503935656175,
+    "lng": 77.5838843650542,
+    "display_name": "NARAYANPET"
+  },
+  "SUKMA": {
+    "lat": 18.258104845592985,
+    "lng": 81.34718376649423,
+    "display_name": "SUKMA"
+  },
+  "UPPER SUBANSIRI": {
+    "lat": 28.29522208545091,
+    "lng": 93.92864030226963,
+    "display_name": "UPPER SUBANSIRI"
+  },
+  "ANJAW": {
+    "lat": 28.07006380292252,
+    "lng": 96.81834427324921,
+    "display_name": "ANJAW"
+  },
+  "TINSUKIA": {
+    "lat": 27.57917296332683,
+    "lng": 95.62070831480848,
+    "display_name": "TINSUKIA"
+  },
+  "DHEMAJI": {
+    "lat": 27.594614329302566,
+    "lng": 94.78292631178049,
+    "display_name": "DHEMAJI"
+  },
+  "CHANGLANG": {
+    "lat": 27.363641115263274,
+    "lng": 96.34324377486244,
+    "display_name": "CHANGLANG"
+  },
+  "DIBRUGARH": {
+    "lat": 27.3649755529514,
+    "lng": 95.05213295286978,
+    "display_name": "DIBRUGARH"
+  },
+  "TAWANG": {
+    "lat": 27.656349537411575,
+    "lng": 91.96157741523719,
+    "display_name": "TAWANG"
+  },
+  "PAPUM PARE": {
+    "lat": 27.288342302052484,
+    "lng": 93.58739526425836,
+    "display_name": "PAPUM PARE"
+  },
+  "LAKHIMPUR": {
+    "lat": 27.176347510678326,
+    "lng": 94.1467765942459,
+    "display_name": "LAKHIMPUR"
+  },
+  "TIRAP": {
+    "lat": 27.02427774301244,
+    "lng": 95.53260202151911,
+    "display_name": "TIRAP"
+  },
+  "SIVASAGAR": {
+    "lat": 26.965806153692522,
+    "lng": 94.65836787753699,
+    "display_name": "SIVASAGAR"
+  },
+  "JORHAT": {
+    "lat": 26.720079689688358,
+    "lng": 94.2616858902246,
+    "display_name": "JORHAT"
+  },
+  "MON": {
+    "lat": 26.68373384007157,
+    "lng": 95.01959256002938,
+    "display_name": "MON"
+  },
+  "SONITPUR": {
+    "lat": 26.758336120118674,
+    "lng": 92.69665034488409,
+    "display_name": "SONITPUR"
+  },
+  "GOLAGHAT": {
+    "lat": 26.47288441401896,
+    "lng": 93.83490398230362,
+    "display_name": "GOLAGHAT"
+  },
+  "LONGLENG": {
+    "lat": 26.55563688314508,
+    "lng": 94.79887317817283,
+    "display_name": "LONGLENG"
+  },
+  "MOKOKCHUNG": {
+    "lat": 26.47304063094105,
+    "lng": 94.53490487336914,
+    "display_name": "MOKOKCHUNG"
+  },
+  "UDALGURI": {
+    "lat": 26.73233919113594,
+    "lng": 92.02760779184416,
+    "display_name": "UDALGURI"
+  },
+  "CHIRANG": {
+    "lat": 26.654903239857752,
+    "lng": 90.6006993206792,
+    "display_name": "CHIRANG"
+  },
+  "BAKSA": {
+    "lat": 26.66748506869274,
+    "lng": 91.35595410935001,
+    "display_name": "BAKSA"
+  },
+  "NAGAON": {
+    "lat": 26.360662737041284,
+    "lng": 92.74207966466656,
+    "display_name": "NAGAON"
+  },
+  "KOKRAJHAR": {
+    "lat": 26.496615648546403,
+    "lng": 90.11317632115204,
+    "display_name": "KOKRAJHAR"
+  },
+  "DARRANG": {
+    "lat": 26.44508639596128,
+    "lng": 92.02820103438792,
+    "display_name": "DARRANG"
+  },
+  "TUENSANG": {
+    "lat": 26.178302015341014,
+    "lng": 94.88848470906176,
+    "display_name": "TUENSANG"
+  },
+  "BARPETA": {
+    "lat": 26.337865975769557,
+    "lng": 90.9992975591556,
+    "display_name": "BARPETA"
+  },
+  "NALBARI": {
+    "lat": 26.383305565530907,
+    "lng": 91.38342937400206,
+    "display_name": "NALBARI"
+  },
+  "MORIGAON": {
+    "lat": 26.282317448176972,
+    "lng": 92.28590341509586,
+    "display_name": "MORIGAON"
+  },
+  "KAMRUP": {
+    "lat": 26.107615405511105,
+    "lng": 91.41050480315113,
+    "display_name": "KAMRUP"
+  },
+  "BONGAIGAON": {
+    "lat": 26.3594734151324,
+    "lng": 90.61693268943216,
+    "display_name": "BONGAIGAON"
+  },
+  "DHUBRI": {
+    "lat": 26.173487387607963,
+    "lng": 90.03631874071529,
+    "display_name": "DHUBRI"
+  },
+  "KAMRUP METROPOLITAN": {
+    "lat": 26.133684871563975,
+    "lng": 91.89248407688052,
+    "display_name": "KAMRUP METROPOLITAN"
+  },
+  "KIPHIRE": {
+    "lat": 25.856057093090776,
+    "lng": 94.8167022217167,
+    "display_name": "KIPHIRE"
+  },
+  "GOALPARA": {
+    "lat": 26.05344275164842,
+    "lng": 90.586107043357,
+    "display_name": "GOALPARA"
+  },
+  "RIBHOI": {
+    "lat": 25.873732611262387,
+    "lng": 91.88115941038362,
+    "display_name": "RIBHOI"
+  },
+  "DIMA HASAO": {
+    "lat": 25.37271142313463,
+    "lng": 93.0325314784827,
+    "display_name": "DIMA HASAO"
+  },
+  "KAMJONG": {
+    "lat": 24.825328370545932,
+    "lng": 94.43083020610561,
+    "display_name": "KAMJONG"
+  },
+  "WEST KHASI HILLS": {
+    "lat": 25.604445858367118,
+    "lng": 91.25707260522421,
+    "display_name": "WEST KHASI HILLS"
+  },
+  "PEREN": {
+    "lat": 25.49155107046209,
+    "lng": 93.61723931691076,
+    "display_name": "PEREN"
+  },
+  "SENAPATI": {
+    "lat": 25.39088714709567,
+    "lng": 94.1222990176064,
+    "display_name": "SENAPATI"
+  },
+  "EAST JAINTIA HILLS": {
+    "lat": 25.25990679460297,
+    "lng": 92.46401642126361,
+    "display_name": "EAST JAINTIA HILLS"
+  },
+  "EAST KHASI HILLS": {
+    "lat": 25.384490976968923,
+    "lng": 91.79724086830683,
+    "display_name": "EAST KHASI HILLS"
+  },
+  "TAMENGLONG": {
+    "lat": 25.04482917739982,
+    "lng": 93.55543619243804,
+    "display_name": "TAMENGLONG"
+  },
+  "SOUTH GARO HILLS": {
+    "lat": 25.300428718139838,
+    "lng": 90.57802805033347,
+    "display_name": "SOUTH GARO HILLS"
+  },
+  "CACHAR": {
+    "lat": 24.807631335289717,
+    "lng": 92.85223663663784,
+    "display_name": "CACHAR"
+  },
+  "IMPHAL WEST": {
+    "lat": 24.75444721903101,
+    "lng": 93.86294948188537,
+    "display_name": "IMPHAL WEST"
+  },
+  "KARIMGANJ": {
+    "lat": 24.579495737945127,
+    "lng": 92.37802307736791,
+    "display_name": "KARIMGANJ"
+  },
+  "HAILAKANDI": {
+    "lat": 24.48847441155255,
+    "lng": 92.58388273551803,
+    "display_name": "HAILAKANDI"
+  },
+  "KAKCHING": {
+    "lat": 24.436574701591997,
+    "lng": 93.91216851392278,
+    "display_name": "KAKCHING"
+  },
+  "BISHNUPUR": {
+    "lat": 24.515044453994296,
+    "lng": 93.78791849898408,
+    "display_name": "BISHNUPUR"
+  },
+  "CHANDEL": {
+    "lat": 24.14270988504268,
+    "lng": 94.01323131313829,
+    "display_name": "CHANDEL"
+  },
+  "CHURACHANDPUR": {
+    "lat": 24.28618348658594,
+    "lng": 93.60530922567781,
+    "display_name": "CHURACHANDPUR"
+  },
+  "NORTH TRIPURA": {
+    "lat": 24.110160157382744,
+    "lng": 92.20722090461709,
+    "display_name": "NORTH TRIPURA"
+  },
+  "DHALAI": {
+    "lat": 23.84150712761671,
+    "lng": 91.92346722960583,
+    "display_name": "DHALAI"
+  },
+  "SIPAHIJALA": {
+    "lat": 23.592620785166112,
+    "lng": 91.32748707875948,
+    "display_name": "SIPAHIJALA"
+  },
+  "GOMATI": {
+    "lat": 23.53225314849527,
+    "lng": 91.62029420675134,
+    "display_name": "GOMATI"
+  },
+  "WOKHA": {
+    "lat": 26.203749710585093,
+    "lng": 94.2015851490742,
+    "display_name": "WOKHA"
+  },
+  "ZUNHEBOTO": {
+    "lat": 26.004129651260605,
+    "lng": 94.48472453297374,
+    "display_name": "ZUNHEBOTO"
+  },
+  "PHEK": {
+    "lat": 25.6478698767557,
+    "lng": 94.53415430574078,
+    "display_name": "PHEK"
+  },
+  "WEST GARO HILLS": {
+    "lat": 25.647238961670993,
+    "lng": 90.19782175041563,
+    "display_name": "WEST GARO HILLS"
+  },
+  "EAST GARO HILLS": {
+    "lat": 25.625857810819582,
+    "lng": 90.63979848731272,
+    "display_name": "EAST GARO HILLS"
+  },
+  "KOHIMA": {
+    "lat": 25.772262177333797,
+    "lng": 94.10744263540637,
+    "display_name": "KOHIMA"
+  },
+  "DIMAPUR": {
+    "lat": 25.772138152055607,
+    "lng": 93.78703876077047,
+    "display_name": "DIMAPUR"
+  },
+  "EAST SIANG": {
+    "lat": 28.037765614821158,
+    "lng": 95.35326271566018,
+    "display_name": "EAST SIANG"
+  },
+  "LOHIT": {
+    "lat": 27.899403169846067,
+    "lng": 96.27988584633113,
+    "display_name": "LOHIT"
+  },
+  "KURUNG KUMEY": {
+    "lat": 28.016402977624733,
+    "lng": 93.20036425943032,
+    "display_name": "KURUNG KUMEY"
+  },
+  "LOWER SUBANSIRI": {
+    "lat": 27.560540802371435,
+    "lng": 93.78592246135536,
+    "display_name": "LOWER SUBANSIRI"
+  },
+  "EAST KAMENG": {
+    "lat": 27.586245881574047,
+    "lng": 92.9191080531407,
+    "display_name": "EAST KAMENG"
+  },
+  "WEST KAMENG": {
+    "lat": 27.295365702333047,
+    "lng": 92.38873048578772,
+    "display_name": "WEST KAMENG"
+  },
+  "WEST JAINTIA HILLS": {
+    "lat": 25.48849250019575,
+    "lng": 92.28491417980246,
+    "display_name": "WEST JAINTIA HILLS"
+  },
+  "SOUTH WEST KHASI HILLS": {
+    "lat": 25.32242013436546,
+    "lng": 91.2358211330335,
+    "display_name": "SOUTH WEST KHASI HILLS"
+  },
+  "NORTH GARO HILLS": {
+    "lat": 25.859743543739654,
+    "lng": 90.67653940506797,
+    "display_name": "NORTH GARO HILLS"
+  },
+  "SOUTH WEST GARO HILLS": {
+    "lat": 25.44645668234489,
+    "lng": 89.99390688301773,
+    "display_name": "SOUTH WEST GARO HILLS"
+  },
+  "KHOWAI": {
+    "lat": 23.947506896614165,
+    "lng": 91.65389848909652,
+    "display_name": "KHOWAI"
+  },
+  "WEST TRIPURA": {
+    "lat": 23.87934015952702,
+    "lng": 91.39664036424564,
+    "display_name": "WEST TRIPURA"
+  },
+  "SOUTH TRIPURA": {
+    "lat": 23.194320542551267,
+    "lng": 91.6117358771789,
+    "display_name": "SOUTH TRIPURA"
+  },
+  "UNOKOTI": {
+    "lat": 24.197522053957954,
+    "lng": 92.04348904306426,
+    "display_name": "UNOKOTI"
+  },
+  "CHARAIDEO": {
+    "lat": 27.062079831905592,
+    "lng": 95.05084156710738,
+    "display_name": "CHARAIDEO"
+  },
+  "MAJULI": {
+    "lat": 27.001663855346685,
+    "lng": 94.29597172795823,
+    "display_name": "MAJULI"
+  },
+  "BISWANATH": {
+    "lat": 26.82665538130786,
+    "lng": 93.37933490702304,
+    "display_name": "BISWANATH"
+  },
+  "HOJAI": {
+    "lat": 25.976667718521583,
+    "lng": 92.97827563228044,
+    "display_name": "HOJAI"
+  },
+  "SOUTH SALMARA MANKACHAR": {
+    "lat": 25.81797179420204,
+    "lng": 89.95549490944892,
+    "display_name": "SOUTH SALMARA MANKACHAR"
+  },
+  "KARBI ANGLONG": {
+    "lat": 26.163408988086378,
+    "lng": 93.40133260895458,
+    "display_name": "KARBI ANGLONG"
+  },
+  "WEST KARBI ANGLONG": {
+    "lat": 25.85042215048207,
+    "lng": 92.53131132515115,
+    "display_name": "WEST KARBI ANGLONG"
+  },
+  "KRA DAADI": {
+    "lat": 27.998784745243526,
+    "lng": 93.6975927995472,
+    "display_name": "KRA DAADI"
+  },
+  "NAMSAI": {
+    "lat": 27.70021496800013,
+    "lng": 96.04628123484363,
+    "display_name": "NAMSAI"
+  },
+  "LONGDING": {
+    "lat": 26.851488003388255,
+    "lng": 95.32470146367605,
+    "display_name": "LONGDING"
+  },
+  "IMPHAL EAST": {
+    "lat": 24.822265102257745,
+    "lng": 94.01548000329261,
+    "display_name": "IMPHAL EAST"
+  },
+  "JIRIBAM": {
+    "lat": 24.67013897158595,
+    "lng": 93.1488327562788,
+    "display_name": "JIRIBAM"
+  },
+  "KANGPOKPI": {
+    "lat": 25.02055513314601,
+    "lng": 93.97514396475256,
+    "display_name": "KANGPOKPI"
+  },
+  "THOUBAL": {
+    "lat": 24.610446619133583,
+    "lng": 94.00258931482512,
+    "display_name": "THOUBAL"
+  },
+  "TENGNOUPAL": {
+    "lat": 24.424330655748488,
+    "lng": 94.22432022246217,
+    "display_name": "TENGNOUPAL"
+  },
+  "UKHRUL": {
+    "lat": 25.224526250377306,
+    "lng": 94.42287106664553,
+    "display_name": "UKHRUL"
+  },
+  "NONEY": {
+    "lat": 24.68197581001654,
+    "lng": 93.48837998776143,
+    "display_name": "NONEY"
+  },
+  "PHERZAWL": {
+    "lat": 24.304273732745525,
+    "lng": 93.220457739356,
+    "display_name": "PHERZAWL"
+  },
+  "UPPER SIANG": {
+    "lat": 28.83646546229441,
+    "lng": 94.91600084227728,
+    "display_name": "UPPER SIANG"
+  },
+  "LOWER SIANG": {
+    "lat": 27.76842808377527,
+    "lng": 94.68527057144716,
+    "display_name": "LOWER SIANG"
+  },
+  "UPPER DIBANG VALLEY": {
+    "lat": 28.86154865389557,
+    "lng": 95.90783627493822,
+    "display_name": "UPPER DIBANG VALLEY"
+  },
+  "LOWER DIBANG VALLEY": {
+    "lat": 28.251483092469133,
+    "lng": 95.8431124578126,
+    "display_name": "LOWER DIBANG VALLEY"
+  },
+  "SIANG": {
+    "lat": 28.404965004003095,
+    "lng": 94.81891457923844,
+    "display_name": "SIANG"
+  },
+  "SHI YOMI": {
+    "lat": 28.676404167239653,
+    "lng": 94.26303637669903,
+    "display_name": "SHI YOMI"
+  },
+  "PAKKE KESSANG": {
+    "lat": 27.106965949469558,
+    "lng": 93.03996972992961,
+    "display_name": "PAKKE KESSANG"
+  },
+  "WEST SIANG": {
+    "lat": 28.1579584670763,
+    "lng": 94.62405123547846,
+    "display_name": "WEST SIANG"
+  },
+  "LEPA RADA": {
+    "lat": 27.927882056147492,
+    "lng": 94.73410918724272,
+    "display_name": "LEPA RADA"
+  },
+  "KAMLE": {
+    "lat": 27.72356367494776,
+    "lng": 94.09361334764517,
+    "display_name": "KAMLE"
+  },
+  "NORTH AND MIDDLE ANDAMAN": {
+    "lat": 12.862370151857613,
+    "lng": 92.87403014324069,
+    "display_name": "NORTH AND MIDDLE ANDAMAN"
+  },
+  "SOUTH ANDAMAN": {
+    "lat": 11.439214840006878,
+    "lng": 92.60586131399387,
+    "display_name": "SOUTH ANDAMAN"
+  },
+  "NICOBARS": {
+    "lat": 7.244920948677177,
+    "lng": 93.69569092413596,
+    "display_name": "NICOBARS"
+  },
+  "AMROHA": {
+    "lat": 28.807133300267836,
+    "lng": 78.3331818421209,
+    "display_name": "AMROHA"
+  },
+  "CHURU": {
+    "lat": 28.346403565014967,
+    "lng": 74.69822796464992,
+    "display_name": "CHURU"
+  },
+  "HAPUR": {
+    "lat": 28.71842254298582,
+    "lng": 77.88783077276489,
+    "display_name": "HAPUR"
+  },
+  "DELHI": {
+    "lat": 28.64506509322086,
+    "lng": 77.11417213954401,
+    "display_name": "DELHI"
+  },
+  "JHAJJAR": {
+    "lat": 28.605955907640812,
+    "lng": 76.65272663663929,
+    "display_name": "JHAJJAR"
+  },
+  "BAREILLY": {
+    "lat": 28.461263706426237,
+    "lng": 79.4297295883815,
+    "display_name": "BAREILLY"
+  },
+  "PILIBHIT": {
+    "lat": 28.529637997679465,
+    "lng": 79.99684168890398,
+    "display_name": "PILIBHIT"
+  },
+  "BULANDSHAHR": {
+    "lat": 28.364109118600172,
+    "lng": 78.01101811977802,
+    "display_name": "BULANDSHAHR"
+  },
+  "GAUTAM BUDDHA NAGAR": {
+    "lat": 28.38641366426426,
+    "lng": 77.55411784094113,
+    "display_name": "GAUTAM BUDDHA NAGAR"
+  },
+  "LAKHIMPUR KHERI": {
+    "lat": 28.121468033009386,
+    "lng": 80.66800693833787,
+    "display_name": "LAKHIMPUR KHERI"
+  },
+  "JHUNJHUNU": {
+    "lat": 28.090499046243504,
+    "lng": 75.55203564219983,
+    "display_name": "JHUNJHUNU"
+  },
+  "GURUGRAM": {
+    "lat": 28.36923137260654,
+    "lng": 76.94313880512543,
+    "display_name": "GURUGRAM"
+  },
+  "FARIDABAD": {
+    "lat": 28.354800739322737,
+    "lng": 77.34123657059071,
+    "display_name": "FARIDABAD"
+  },
+  "MAHENDRAGARH": {
+    "lat": 28.169915969195504,
+    "lng": 76.14054323916896,
+    "display_name": "MAHENDRAGARH"
+  },
+  "REWARI": {
+    "lat": 28.23866578841627,
+    "lng": 76.54115432470489,
+    "display_name": "REWARI"
+  },
+  "BUDAUN": {
+    "lat": 28.074545159379248,
+    "lng": 79.04382945677604,
+    "display_name": "BUDAUN"
+  },
+  "JAISALMER": {
+    "lat": 27.076210530469986,
+    "lng": 70.90384532428806,
+    "display_name": "JAISALMER"
+  },
+  "BAHRAICH": {
+    "lat": 27.702558449653516,
+    "lng": 81.49038290554547,
+    "display_name": "BAHRAICH"
+  },
+  "NUH": {
+    "lat": 27.992229794590443,
+    "lng": 77.05098667146933,
+    "display_name": "NUH"
+  },
+  "SHAHJAHANPUR": {
+    "lat": 27.948644595963685,
+    "lng": 79.81986216055054,
+    "display_name": "SHAHJAHANPUR"
+  },
+  "SIKAR": {
+    "lat": 27.632985871598393,
+    "lng": 75.28479692050193,
+    "display_name": "SIKAR"
+  },
+  "PALWAL": {
+    "lat": 28.054595081699063,
+    "lng": 77.33055859590384,
+    "display_name": "PALWAL"
+  },
+  "ALWAR": {
+    "lat": 27.590422778715304,
+    "lng": 76.60239474461478,
+    "display_name": "ALWAR"
+  },
+  "NORTH SIKKIM": {
+    "lat": 27.739903806714054,
+    "lng": 88.53303747242255,
+    "display_name": "NORTH SIKKIM"
+  },
+  "ALIGARH": {
+    "lat": 27.926594840372097,
+    "lng": 78.07164909349493,
+    "display_name": "ALIGARH"
+  },
+  "KASGANJ": {
+    "lat": 27.777177606777396,
+    "lng": 78.84225971270389,
+    "display_name": "KASGANJ"
+  },
+  "MATHURA": {
+    "lat": 27.601505027817907,
+    "lng": 77.62601671270649,
+    "display_name": "MATHURA"
+  },
+  "JAIPUR": {
+    "lat": 26.97253397198811,
+    "lng": 75.71273854559962,
+    "display_name": "JAIPUR"
+  },
+  "SHRAWASTI": {
+    "lat": 27.714095572258252,
+    "lng": 81.90518799972946,
+    "display_name": "SHRAWASTI"
+  },
+  "JODHPUR": {
+    "lat": 26.74468459546146,
+    "lng": 72.78656623975546,
+    "display_name": "JODHPUR"
+  },
+  "SITAPUR": {
+    "lat": 27.51584032850588,
+    "lng": 80.8516989473749,
+    "display_name": "SITAPUR"
+  },
+  "BHARATPUR": {
+    "lat": 27.255704871634478,
+    "lng": 77.27647932748684,
+    "display_name": "BHARATPUR"
+  },
+  "HATHRAS": {
+    "lat": 27.574923216392946,
+    "lng": 78.15942199048196,
+    "display_name": "HATHRAS"
+  },
+  "NAGAUR": {
+    "lat": 27.066090725420214,
+    "lng": 74.16950727555377,
+    "display_name": "NAGAUR"
+  },
+  "ETAH": {
+    "lat": 27.51831351622055,
+    "lng": 78.72451846232622,
+    "display_name": "ETAH"
+  },
+  "HARDOI": {
+    "lat": 27.332609358427177,
+    "lng": 80.15797775883664,
+    "display_name": "HARDOI"
+  },
+  "FARRUKHABAD": {
+    "lat": 27.427502457253503,
+    "lng": 79.4571106955928,
+    "display_name": "FARRUKHABAD"
+  },
+  "WEST SIKKIM": {
+    "lat": 27.348107938096806,
+    "lng": 88.16644230279331,
+    "display_name": "WEST SIKKIM"
+  },
+  "SOUTH SIKKIM": {
+    "lat": 27.28427553032139,
+    "lng": 88.37735517085262,
+    "display_name": "SOUTH SIKKIM"
+  },
+  "EAST SIKKIM": {
+    "lat": 27.289249121487384,
+    "lng": 88.6714137184873,
+    "display_name": "EAST SIKKIM"
+  },
+  "FIROZABAD": {
+    "lat": 27.187088964978095,
+    "lng": 78.52856379875881,
+    "display_name": "FIROZABAD"
+  },
+  "WEST CHAMPARAN": {
+    "lat": 27.080793363157607,
+    "lng": 84.3356492247609,
+    "display_name": "WEST CHAMPARAN"
+  },
+  "SIDDHARTHNAGAR": {
+    "lat": 27.26788452780299,
+    "lng": 82.86840016427318,
+    "display_name": "SIDDHARTHNAGAR"
+  },
+  "MAINPURI": {
+    "lat": 27.18336545988883,
+    "lng": 79.04958388478536,
+    "display_name": "MAINPURI"
+  },
+  "MAHARAJGANJ": {
+    "lat": 27.202160866772893,
+    "lng": 83.53429699296245,
+    "display_name": "MAHARAJGANJ"
+  },
+  "AGRA": {
+    "lat": 27.034414998015258,
+    "lng": 78.07120677546918,
+    "display_name": "AGRA"
+  },
+  "GONDA": {
+    "lat": 27.081994841737536,
+    "lng": 82.02374931253293,
+    "display_name": "GONDA"
+  },
+  "BARABANKI": {
+    "lat": 26.93837386973037,
+    "lng": 81.33360928349653,
+    "display_name": "BARABANKI"
+  },
+  "DARJEELING": {
+    "lat": 26.844038193627174,
+    "lng": 88.26237862786074,
+    "display_name": "DARJEELING"
+  },
+  "DAUSA": {
+    "lat": 26.869863622795233,
+    "lng": 76.52153891087393,
+    "display_name": "DAUSA"
+  },
+  "KUSHINAGAR": {
+    "lat": 26.857677850382494,
+    "lng": 83.93076124646481,
+    "display_name": "KUSHINAGAR"
+  },
+  "KANNAUJ": {
+    "lat": 27.014410528717846,
+    "lng": 79.6852919516345,
+    "display_name": "KANNAUJ"
+  },
+  "LUCKNOW": {
+    "lat": 26.841129124035184,
+    "lng": 80.90384714762875,
+    "display_name": "LUCKNOW"
+  },
+  "JALPAIGURI": {
+    "lat": 26.68423447254973,
+    "lng": 88.76382123674948,
+    "display_name": "JALPAIGURI"
+  },
+  "BASTI": {
+    "lat": 26.818926064087286,
+    "lng": 82.62381905727027,
+    "display_name": "BASTI"
+  },
+  "GORAKHPUR": {
+    "lat": 26.65803092168504,
+    "lng": 83.35621294888387,
+    "display_name": "GORAKHPUR"
+  },
+  "SANT KABIR NAGAR": {
+    "lat": 26.783648477512727,
+    "lng": 83.02860347378267,
+    "display_name": "SANT KABIR NAGAR"
+  },
+  "KARAULI": {
+    "lat": 26.518442052496223,
+    "lng": 76.95936107719147,
+    "display_name": "KARAULI"
+  },
+  "EAST CHAMPARAN": {
+    "lat": 26.621555143132955,
+    "lng": 84.92237424458133,
+    "display_name": "EAST CHAMPARAN"
+  },
+  "UNNAO": {
+    "lat": 26.60356491648288,
+    "lng": 80.57008829590043,
+    "display_name": "UNNAO"
+  },
+  "ETAWAH": {
+    "lat": 26.770449410440957,
+    "lng": 79.0923954080363,
+    "display_name": "ETAWAH"
+  },
+  "DHOLPUR": {
+    "lat": 26.68158887574966,
+    "lng": 77.69888205772722,
+    "display_name": "DHOLPUR"
+  },
+  "KANPUR NAGAR": {
+    "lat": 26.391975347391718,
+    "lng": 80.2055067692582,
+    "display_name": "KANPUR NAGAR"
+  },
+  "AURAIYA": {
+    "lat": 26.6581599190214,
+    "lng": 79.47861960231728,
+    "display_name": "AURAIYA"
+  },
+  "MORENA": {
+    "lat": 26.417682516550613,
+    "lng": 77.86710578518868,
+    "display_name": "MORENA"
+  },
+  "BARMER": {
+    "lat": 25.73307102979859,
+    "lng": 71.4758224447446,
+    "display_name": "BARMER"
+  },
+  "AYODHYA": {
+    "lat": 26.655082048348355,
+    "lng": 82.00126969401954,
+    "display_name": "AYODHYA"
+  },
+  "KANPUR DEHAT": {
+    "lat": 26.438814274549397,
+    "lng": 79.84909866317416,
+    "display_name": "KANPUR DEHAT"
+  },
+  "BHIND": {
+    "lat": 26.416503770454582,
+    "lng": 78.72590707844954,
+    "display_name": "BHIND"
+  },
+  "SAWAI MADHOPUR": {
+    "lat": 26.22335270647954,
+    "lng": 76.46392400509461,
+    "display_name": "SAWAI MADHOPUR"
+  },
+  "DEORIA": {
+    "lat": 26.417157935255233,
+    "lng": 83.83795234396598,
+    "display_name": "DEORIA"
+  },
+  "SITAMARHI": {
+    "lat": 26.584712224023257,
+    "lng": 85.55436947066381,
+    "display_name": "SITAMARHI"
+  },
+  "TONK": {
+    "lat": 26.147835327169684,
+    "lng": 75.6627956882194,
+    "display_name": "TONK"
+  },
+  "SHEOHAR": {
+    "lat": 26.493753775906722,
+    "lng": 85.29908690521084,
+    "display_name": "SHEOHAR"
+  },
+  "SULTANPUR": {
+    "lat": 26.246220104838706,
+    "lng": 82.22427832095059,
+    "display_name": "SULTANPUR"
+  },
+  "PALI": {
+    "lat": 25.6999764523536,
+    "lng": 73.51326008523895,
+    "display_name": "PALI"
+  },
+  "GOPALGANJ": {
+    "lat": 26.444823323723835,
+    "lng": 84.3723520840612,
+    "display_name": "GOPALGANJ"
+  },
+  "AMBEDKAR NAGAR": {
+    "lat": 26.422562105460063,
+    "lng": 82.66644030816923,
+    "display_name": "AMBEDKAR NAGAR"
+  },
+  "RAE BARELI": {
+    "lat": 26.22563515555709,
+    "lng": 81.14709928551682,
+    "display_name": "RAE BARELI"
+  },
+  "JALAUN": {
+    "lat": 26.08118862956648,
+    "lng": 79.38687780726681,
+    "display_name": "JALAUN"
+  },
+  "AZAMGARH": {
+    "lat": 26.045697886565996,
+    "lng": 83.06319482335824,
+    "display_name": "AZAMGARH"
+  },
+  "GWALIOR": {
+    "lat": 26.040334011508406,
+    "lng": 78.13512367869366,
+    "display_name": "GWALIOR"
+  },
+  "SHEOPUR": {
+    "lat": 25.749704210626483,
+    "lng": 77.00202008019785,
+    "display_name": "SHEOPUR"
+  },
+  "MAU": {
+    "lat": 26.05053083584866,
+    "lng": 83.56235313279576,
+    "display_name": "MAU"
+  },
+  "FATEHPUR": {
+    "lat": 25.87855696992756,
+    "lng": 80.80817969799966,
+    "display_name": "FATEHPUR"
+  },
+  "BALLIA": {
+    "lat": 25.872418983185657,
+    "lng": 84.10348870015302,
+    "display_name": "BALLIA"
+  },
+  "JAUNPUR": {
+    "lat": 25.752076764982903,
+    "lng": 82.57782198605486,
+    "display_name": "JAUNPUR"
+  },
+  "BHILWARA": {
+    "lat": 25.48222139652851,
+    "lng": 74.72984879807541,
+    "display_name": "BHILWARA"
+  },
+  "SAMASTIPUR": {
+    "lat": 25.7746019659936,
+    "lng": 85.86185672806718,
+    "display_name": "SAMASTIPUR"
+  },
+  "JALORE": {
+    "lat": 25.101939338006588,
+    "lng": 72.21188394568071,
+    "display_name": "JALORE"
+  },
+  "BUNDI": {
+    "lat": 25.488695671682645,
+    "lng": 75.7929315588949,
+    "display_name": "BUNDI"
+  },
+  "KATIHAR": {
+    "lat": 25.552118577146985,
+    "lng": 87.64317152813794,
+    "display_name": "KATIHAR"
+  },
+  "JHANSI": {
+    "lat": 25.503180672640845,
+    "lng": 78.94546846525793,
+    "display_name": "JHANSI"
+  },
+  "SHIVPURI": {
+    "lat": 25.367934417164797,
+    "lng": 77.81128904602278,
+    "display_name": "SHIVPURI"
+  },
+  "KOTA": {
+    "lat": 25.11541521252841,
+    "lng": 76.10259539452743,
+    "display_name": "KOTA"
+  },
+  "BANDA": {
+    "lat": 25.47203606869079,
+    "lng": 80.5498006464931,
+    "display_name": "BANDA"
+  },
+  "GHAZIPUR": {
+    "lat": 25.625549459102974,
+    "lng": 83.5562210769435,
+    "display_name": "GHAZIPUR"
+  },
+  "KAUSHAMBI": {
+    "lat": 25.502633280051153,
+    "lng": 81.41322520402404,
+    "display_name": "KAUSHAMBI"
+  },
+  "KHAGARIA": {
+    "lat": 25.512031760652604,
+    "lng": 86.60354758816588,
+    "display_name": "KHAGARIA"
+  },
+  "BHOJPUR": {
+    "lat": 25.472603775899824,
+    "lng": 84.5419440752144,
+    "display_name": "BHOJPUR"
+  },
+  "PRAYAGRAJ": {
+    "lat": 25.303963939361463,
+    "lng": 81.96314412931079,
+    "display_name": "PRAYAGRAJ"
+  },
+  "BUXAR": {
+    "lat": 25.48765243708132,
+    "lng": 84.10005703371932,
+    "display_name": "BUXAR"
+  },
+  "DAKSHIN DINAJPUR": {
+    "lat": 25.36776134354603,
+    "lng": 88.5694732432492,
+    "display_name": "DAKSHIN DINAJPUR"
+  },
+  "MALDA": {
+    "lat": 25.144923580002793,
+    "lng": 88.08396643803208,
+    "display_name": "MALDA"
+  },
+  "TIKAMGARH": {
+    "lat": 24.885156072910284,
+    "lng": 79.01319560937701,
+    "display_name": "TIKAMGARH"
+  },
+  "VARANASI": {
+    "lat": 25.39339919624058,
+    "lng": 82.91871686633046,
+    "display_name": "VARANASI"
+  },
+  "DARBHANGA": {
+    "lat": 26.084239663371505,
+    "lng": 86.05151115278444,
+    "display_name": "DARBHANGA"
+  },
+  "SAHARSA": {
+    "lat": 25.817555473454668,
+    "lng": 86.58976993688263,
+    "display_name": "SAHARSA"
+  },
+  "SIROHI": {
+    "lat": 24.762107486754413,
+    "lng": 72.7795342834429,
+    "display_name": "SIROHI"
+  },
+  "CHITRAKOOT": {
+    "lat": 25.21404583897457,
+    "lng": 81.08249437083576,
+    "display_name": "CHITRAKOOT"
+  },
+  "CHANDAULI": {
+    "lat": 25.13406235751308,
+    "lng": 83.25818982404986,
+    "display_name": "CHANDAULI"
+  },
+  "BHADOHI": {
+    "lat": 25.35073780348872,
+    "lng": 82.45854526071147,
+    "display_name": "BHADOHI"
+  },
+  "BARAN": {
+    "lat": 25.001200019626726,
+    "lng": 76.75151879794436,
+    "display_name": "BARAN"
+  },
+  "SAHIBGANJ": {
+    "lat": 25.00733426146968,
+    "lng": 87.67658559971187,
+    "display_name": "SAHIBGANJ"
+  },
+  "KAIMUR": {
+    "lat": 24.99438425533724,
+    "lng": 83.60718418092056,
+    "display_name": "KAIMUR"
+  },
+  "ROHTAS": {
+    "lat": 24.978368878040683,
+    "lng": 84.02307479648043,
+    "display_name": "ROHTAS"
+  },
+  "UDAIPUR": {
+    "lat": 24.418957706222276,
+    "lng": 73.68934113117419,
+    "display_name": "UDAIPUR"
+  },
+  "GODDA": {
+    "lat": 24.853441965087015,
+    "lng": 87.31197450307191,
+    "display_name": "GODDA"
+  },
+  "MIRZAPUR": {
+    "lat": 24.986665519015588,
+    "lng": 82.61027477997943,
+    "display_name": "MIRZAPUR"
+  },
+  "LALITPUR": {
+    "lat": 24.65456423960724,
+    "lng": 78.5644849582081,
+    "display_name": "LALITPUR"
+  },
+  "JAMUI": {
+    "lat": 24.782052546534917,
+    "lng": 86.29508351420233,
+    "display_name": "JAMUI"
+  },
+  "NEEMUCH": {
+    "lat": 24.586382961220547,
+    "lng": 75.14141651034087,
+    "display_name": "NEEMUCH"
+  },
+  "BANKA": {
+    "lat": 24.85019368648716,
+    "lng": 86.84153537886789,
+    "display_name": "BANKA"
+  },
+  "REWA": {
+    "lat": 24.757475185977334,
+    "lng": 81.590506380177,
+    "display_name": "REWA"
+  },
+  "SATNA": {
+    "lat": 24.536460087709763,
+    "lng": 80.83783455469448,
+    "display_name": "SATNA"
+  },
+  "GUNA": {
+    "lat": 24.551674311369847,
+    "lng": 77.19531496614484,
+    "display_name": "GUNA"
+  },
+  "NAWADA": {
+    "lat": 24.814366456724784,
+    "lng": 85.59345457300012,
+    "display_name": "NAWADA"
+  },
+  "GAYA": {
+    "lat": 24.70257521646432,
+    "lng": 84.93758358610992,
+    "display_name": "GAYA"
+  },
+  "ASHOKNAGAR": {
+    "lat": 24.605686933469038,
+    "lng": 77.87750033657323,
+    "display_name": "ASHOKNAGAR"
+  },
+  "BANASKANTHA": {
+    "lat": 24.2916362864331,
+    "lng": 72.03229239119341,
+    "display_name": "BANASKANTHA"
+  },
+  "JHALAWAR": {
+    "lat": 24.33468287750006,
+    "lng": 76.19004796006737,
+    "display_name": "JHALAWAR"
+  },
+  "MURSHIDABAD": {
+    "lat": 24.174874320347616,
+    "lng": 88.22563151294047,
+    "display_name": "MURSHIDABAD"
+  },
+  "SONBHADRA": {
+    "lat": 24.400777706935074,
+    "lng": 83.05126102318168,
+    "display_name": "SONBHADRA"
+  },
+  "PAKUR": {
+    "lat": 24.559761015838415,
+    "lng": 87.66404642392529,
+    "display_name": "PAKUR"
+  },
+  "MANDSAUR": {
+    "lat": 24.199744658513463,
+    "lng": 75.40505618612852,
+    "display_name": "MANDSAUR"
+  },
+  "MUNGER": {
+    "lat": 25.201711572101864,
+    "lng": 86.5305461506792,
+    "display_name": "MUNGER"
+  },
+  "GIRIDIH": {
+    "lat": 24.291922352417654,
+    "lng": 86.10847171463806,
+    "display_name": "GIRIDIH"
+  },
+  "DUMKA": {
+    "lat": 24.320752991190535,
+    "lng": 87.26260416783529,
+    "display_name": "DUMKA"
+  },
+  "SINGRAULI": {
+    "lat": 24.216550900504245,
+    "lng": 82.41917539979848,
+    "display_name": "SINGRAULI"
+  },
+  "BIRBHUM": {
+    "lat": 23.960102353612797,
+    "lng": 87.66088857844782,
+    "display_name": "BIRBHUM"
+  },
+  "DEOGHAR": {
+    "lat": 24.332531159561402,
+    "lng": 86.73402406160713,
+    "display_name": "DEOGHAR"
+  },
+  "PALAMU": {
+    "lat": 24.20232341666789,
+    "lng": 84.1694309175367,
+    "display_name": "PALAMU"
+  },
+  "SIDHI": {
+    "lat": 24.221718514262268,
+    "lng": 81.82607568922909,
+    "display_name": "SIDHI"
+  },
+  "CHATRA": {
+    "lat": 24.18122131648806,
+    "lng": 84.87714682329641,
+    "display_name": "CHATRA"
+  },
+  "GARHWA": {
+    "lat": 24.103284100710628,
+    "lng": 83.69567930807469,
+    "display_name": "GARHWA"
+  },
+  "SAGAR": {
+    "lat": 23.858215122044236,
+    "lng": 78.75798067616161,
+    "display_name": "SAGAR"
+  },
+  "PATAN": {
+    "lat": 23.77380879945294,
+    "lng": 71.75797857237946,
+    "display_name": "PATAN"
+  },
+  "DAMOH": {
+    "lat": 23.812701817952707,
+    "lng": 79.5286980419497,
+    "display_name": "DAMOH"
+  },
+  "SHAJAPUR": {
+    "lat": 23.371539920503967,
+    "lng": 76.56966479710582,
+    "display_name": "SHAJAPUR"
+  },
+  "VIDISHA": {
+    "lat": 23.893301011956726,
+    "lng": 77.81265449745469,
+    "display_name": "VIDISHA"
+  },
+  "MEHSANA": {
+    "lat": 23.611000162051372,
+    "lng": 72.46961526852772,
+    "display_name": "MEHSANA"
+  },
+  "RAJGARH": {
+    "lat": 23.863371866466967,
+    "lng": 76.73151630266887,
+    "display_name": "RAJGARH"
+  },
+  "SHAHDOL": {
+    "lat": 23.631966332727533,
+    "lng": 81.47360083209604,
+    "display_name": "SHAHDOL"
+  },
+  "NADIA": {
+    "lat": 23.487535186064957,
+    "lng": 88.51374107338889,
+    "display_name": "NADIA"
+  },
+  "JAMTARA": {
+    "lat": 23.982656610056075,
+    "lng": 86.90373946609407,
+    "display_name": "JAMTARA"
+  },
+  "DUNGARPUR": {
+    "lat": 23.73215443223359,
+    "lng": 73.8493229005212,
+    "display_name": "DUNGARPUR"
+  },
+  "KATNI": {
+    "lat": 23.752615436738296,
+    "lng": 80.40855678521633,
+    "display_name": "KATNI"
+  },
+  "DHANBAD": {
+    "lat": 23.830175895608882,
+    "lng": 86.47616410643043,
+    "display_name": "DHANBAD"
+  },
+  "BANSWARA": {
+    "lat": 23.478032525369706,
+    "lng": 74.35998167780835,
+    "display_name": "BANSWARA"
+  },
+  "UMARIA": {
+    "lat": 23.564059027819255,
+    "lng": 80.9771730056238,
+    "display_name": "UMARIA"
+  },
+  "LATEHAR": {
+    "lat": 23.714747331554197,
+    "lng": 84.43970067127492,
+    "display_name": "LATEHAR"
+  },
+  "RATLAM": {
+    "lat": 23.497490735957502,
+    "lng": 75.07928418057914,
+    "display_name": "RATLAM"
+  },
+  "BOKARO": {
+    "lat": 23.697539903086078,
+    "lng": 85.99670715636103,
+    "display_name": "BOKARO"
+  },
+  "RAMGARH": {
+    "lat": 23.63140865462162,
+    "lng": 85.55861779795723,
+    "display_name": "RAMGARH"
+  },
+  "BHOPAL": {
+    "lat": 23.469006428496836,
+    "lng": 77.39088416077878,
+    "display_name": "BHOPAL"
+  },
+  "PURBA BARDHAMAN": {
+    "lat": 23.355956947808746,
+    "lng": 87.95028887198276,
+    "display_name": "PURBA BARDHAMAN"
+  },
+  "KORIYA": {
+    "lat": 23.47158627598493,
+    "lng": 82.23330873134667,
+    "display_name": "KORIYA"
+  },
+  "UJJAIN": {
+    "lat": 23.331838583375255,
+    "lng": 75.66751288096356,
+    "display_name": "UJJAIN"
+  },
+  "GANDHINAGAR": {
+    "lat": 23.25861815734114,
+    "lng": 72.6959746671577,
+    "display_name": "GANDHINAGAR"
+  },
+  "AHMEDABAD": {
+    "lat": 22.775642201278398,
+    "lng": 72.24343929078874,
+    "display_name": "AHMEDABAD"
+  },
+  "RAISEN": {
+    "lat": 23.22420574380303,
+    "lng": 78.11736163413462,
+    "display_name": "RAISEN"
+  },
+  "PURULIA": {
+    "lat": 23.279849622355872,
+    "lng": 86.42385106186217,
+    "display_name": "PURULIA"
+  },
+  "SEHORE": {
+    "lat": 22.987223085275108,
+    "lng": 77.1242150430175,
+    "display_name": "SEHORE"
+  },
+  "RANCHI": {
+    "lat": 23.33038931122825,
+    "lng": 85.36646104598938,
+    "display_name": "RANCHI"
+  },
+  "BANKURA": {
+    "lat": 23.13879795331214,
+    "lng": 87.13504197468778,
+    "display_name": "BANKURA"
+  },
+  "LOHARDAGA": {
+    "lat": 23.474987845237205,
+    "lng": 84.67423642784892,
+    "display_name": "LOHARDAGA"
+  },
+  "PANCHMAHAL": {
+    "lat": 22.722876355144884,
+    "lng": 73.62563380469099,
+    "display_name": "PANCHMAHAL"
+  },
+  "JABALPUR": {
+    "lat": 23.237139749375217,
+    "lng": 79.97201926371841,
+    "display_name": "JABALPUR"
+  },
+  "GUMLA": {
+    "lat": 23.10251151653947,
+    "lng": 84.5257342543509,
+    "display_name": "GUMLA"
+  },
+  "DAHOD": {
+    "lat": 22.8619181158536,
+    "lng": 74.11094236012453,
+    "display_name": "DAHOD"
+  },
+  "DEWAS": {
+    "lat": 22.743835746644205,
+    "lng": 76.4609357657055,
+    "display_name": "DEWAS"
+  },
+  "ANUPPUR": {
+    "lat": 23.057663118355148,
+    "lng": 81.6872101015666,
+    "display_name": "ANUPPUR"
+  },
+  "JHABUA": {
+    "lat": 22.889169417654447,
+    "lng": 74.66841505324601,
+    "display_name": "JHABUA"
+  },
+  "NORTH 24 PARGANAS": {
+    "lat": 22.73045876090665,
+    "lng": 88.73194813907868,
+    "display_name": "NORTH 24 PARGANAS"
+  },
+  "DINDORI": {
+    "lat": 22.89379607009435,
+    "lng": 81.04526858891401,
+    "display_name": "DINDORI"
+  },
+  "HOOGHLY": {
+    "lat": 22.876684402012582,
+    "lng": 88.07075876890403,
+    "display_name": "HOOGHLY"
+  },
+  "KHUNTI": {
+    "lat": 22.992480788922602,
+    "lng": 85.26102511566279,
+    "display_name": "KHUNTI"
+  },
+  "NARSINGHPUR": {
+    "lat": 22.941623537198517,
+    "lng": 79.09238157580772,
+    "display_name": "NARSINGHPUR"
+  },
+  "DHAR": {
+    "lat": 22.500323251895793,
+    "lng": 75.1028960171803,
+    "display_name": "DHAR"
+  },
+  "JASHPUR": {
+    "lat": 22.797879314246888,
+    "lng": 83.85763937582368,
+    "display_name": "JASHPUR"
+  },
+  "INDORE": {
+    "lat": 22.71341136660899,
+    "lng": 75.78088205966374,
+    "display_name": "INDORE"
+  },
+  "SARAIKELA-KHARSAWAN": {
+    "lat": 22.85254392306147,
+    "lng": 85.95652524856507,
+    "display_name": "SARAIKELA-KHARSAWAN"
+  },
+  "MANDLA": {
+    "lat": 22.637884992074913,
+    "lng": 80.512996793419,
+    "display_name": "MANDLA"
+  },
+  "EAST SINGHBHUM": {
+    "lat": 22.5865670293942,
+    "lng": 86.44354198568689,
+    "display_name": "EAST SINGHBHUM"
+  },
+  "HOSHANGABAD": {
+    "lat": 22.59735636646817,
+    "lng": 78.00121837281222,
+    "display_name": "HOSHANGABAD"
+  },
+  "KORBA": {
+    "lat": 22.5377196511449,
+    "lng": 82.60788040307223,
+    "display_name": "KORBA"
+  },
+  "WEST SINGHBHUM": {
+    "lat": 22.422928107777604,
+    "lng": 85.52060642132105,
+    "display_name": "WEST SINGHBHUM"
+  },
+  "HOWRAH": {
+    "lat": 22.518917153588532,
+    "lng": 88.06881625563486,
+    "display_name": "HOWRAH"
+  },
+  "SIMDEGA": {
+    "lat": 22.580013723315112,
+    "lng": 84.55894829576803,
+    "display_name": "SIMDEGA"
+  },
+  "KOLKATA": {
+    "lat": 22.55633735695253,
+    "lng": 88.34636008826938,
+    "display_name": "KOLKATA"
+  },
+  "KODERMA": {
+    "lat": 24.4928850201255,
+    "lng": 85.65929272409194,
+    "display_name": "KODERMA"
+  },
+  "HAZARIBAGH": {
+    "lat": 24.056956935155572,
+    "lng": 85.41481465579307,
+    "display_name": "HAZARIBAGH"
+  },
+  "VAISHALI": {
+    "lat": 25.761898529080216,
+    "lng": 85.36660125757783,
+    "display_name": "VAISHALI"
+  },
+  "BEGUSARAI": {
+    "lat": 25.497676691805708,
+    "lng": 86.12853140499888,
+    "display_name": "BEGUSARAI"
+  },
+  "BHAGALPUR": {
+    "lat": 25.268912451706992,
+    "lng": 87.09108448601755,
+    "display_name": "BHAGALPUR"
+  },
+  "LAKHISARAI": {
+    "lat": 25.15635618396889,
+    "lng": 86.13476795830493,
+    "display_name": "LAKHISARAI"
+  },
+  "SHEIKHPURA": {
+    "lat": 25.12375820575769,
+    "lng": 85.83316834125034,
+    "display_name": "SHEIKHPURA"
+  },
+  "ARWAL": {
+    "lat": 25.16641233666386,
+    "lng": 84.68672272527178,
+    "display_name": "ARWAL"
+  },
+  "JEHANABAD": {
+    "lat": 25.15638767896001,
+    "lng": 85.01858244177957,
+    "display_name": "JEHANABAD"
+  },
+  "NALANDA": {
+    "lat": 25.227131618855243,
+    "lng": 85.44835614592438,
+    "display_name": "NALANDA"
+  },
+  "PATNA": {
+    "lat": 25.454613067955624,
+    "lng": 85.22817574935097,
+    "display_name": "PATNA"
+  },
+  "SARAN": {
+    "lat": 25.90335644079038,
+    "lng": 84.82061952058764,
+    "display_name": "SARAN"
+  },
+  "SIWAN": {
+    "lat": 26.164157853099546,
+    "lng": 84.39397216549665,
+    "display_name": "SIWAN"
+  },
+  "MUZAFFARPUR": {
+    "lat": 26.149318411056854,
+    "lng": 85.32460287424514,
+    "display_name": "MUZAFFARPUR"
+  },
+  "MADHEPURA": {
+    "lat": 25.81241625954313,
+    "lng": 86.90515129641412,
+    "display_name": "MADHEPURA"
+  },
+  "ARARIA": {
+    "lat": 26.198258304656072,
+    "lng": 87.36413665252074,
+    "display_name": "ARARIA"
+  },
+  "SUPAUL": {
+    "lat": 26.239781013933104,
+    "lng": 86.80680882105342,
+    "display_name": "SUPAUL"
+  },
+  "MADHUBANI": {
+    "lat": 26.40125721328184,
+    "lng": 86.2207623835431,
+    "display_name": "MADHUBANI"
+  },
+  "PURNIA": {
+    "lat": 25.81559718578149,
+    "lng": 87.40310111494794,
+    "display_name": "PURNIA"
+  },
+  "SURAJPUR": {
+    "lat": 23.39716148771903,
+    "lng": 82.8824905169523,
+    "display_name": "SURAJPUR"
+  },
+  "SURGUJA": {
+    "lat": 22.926106578509717,
+    "lng": 83.22501981745972,
+    "display_name": "SURGUJA"
+  },
+  "ARAVALLI": {
+    "lat": 23.466983375241114,
+    "lng": 73.33084826577758,
+    "display_name": "ARAVALLI"
+  },
+  "MAHISAGAR": {
+    "lat": 23.19292022680656,
+    "lng": 73.64999450192235,
+    "display_name": "MAHISAGAR"
+  },
+  "AMETHI": {
+    "lat": 26.290392210788593,
+    "lng": 81.63490403747392,
+    "display_name": "AMETHI"
+  },
+  "GHAZIABAD": {
+    "lat": 28.766723872921787,
+    "lng": 77.46472695582607,
+    "display_name": "GHAZIABAD"
+  },
+  "AGAR MALWA": {
+    "lat": 23.800162788195614,
+    "lng": 76.09091761199628,
+    "display_name": "AGAR MALWA"
+  },
+  "SAMBHAL": {
+    "lat": 28.454566457560254,
+    "lng": 78.5537873702481,
+    "display_name": "SAMBHAL"
+  },
+  "CHARKHI DADRI": {
+    "lat": 28.578305617414046,
+    "lng": 76.15646117710317,
+    "display_name": "CHARKHI DADRI"
+  },
+  "ALIPURDUAR": {
+    "lat": 26.629911959091533,
+    "lng": 89.45771611802044,
+    "display_name": "ALIPURDUAR"
+  },
+  "PASCHIM BARDHAMAN": {
+    "lat": 23.66599181321715,
+    "lng": 87.15603126130817,
+    "display_name": "PASCHIM BARDHAMAN"
+  },
+  "KALIMPONG": {
+    "lat": 27.030905539709284,
+    "lng": 88.62724952507993,
+    "display_name": "KALIMPONG"
+  },
+  "AJMER": {
+    "lat": 26.22847153245742,
+    "lng": 74.75999377316232,
+    "display_name": "AJMER"
+  },
+  "COOCH BEHAR": {
+    "lat": 26.293420252165426,
+    "lng": 89.365004649797,
+    "display_name": "COOCH BEHAR"
+  },
+  "UTTAR DINAJPUR": {
+    "lat": 25.891718149952286,
+    "lng": 88.1576307525607,
+    "display_name": "UTTAR DINAJPUR"
+  },
+  "DATIA": {
+    "lat": 25.80879033437415,
+    "lng": 78.59845276045252,
+    "display_name": "DATIA"
+  },
+  "RAJSAMAND": {
+    "lat": 25.223917519215558,
+    "lng": 73.88803241886731,
+    "display_name": "RAJSAMAND"
+  },
+  "MAHOBA": {
+    "lat": 25.362688668853785,
+    "lng": 79.72910444728953,
+    "display_name": "MAHOBA"
+  },
+  "CHHATARPUR": {
+    "lat": 24.8047020585654,
+    "lng": 79.6679491430859,
+    "display_name": "CHHATARPUR"
+  },
+  "CHITTORGARH": {
+    "lat": 24.824111122250212,
+    "lng": 74.78333885833904,
+    "display_name": "CHITTORGARH"
+  },
+  "PANNA": {
+    "lat": 24.416716002726506,
+    "lng": 80.19282441614554,
+    "display_name": "PANNA"
+  },
+  "SABARKANTHA": {
+    "lat": 23.79719757416443,
+    "lng": 73.03246489477354,
+    "display_name": "SABARKANTHA"
+  },
+  "KUTCH": {
+    "lat": 23.64778490499409,
+    "lng": 69.90232339338563,
+    "display_name": "KUTCH"
+  },
+  "SURENDRANAGAR": {
+    "lat": 22.77998453163941,
+    "lng": 71.60099322977521,
+    "display_name": "SURENDRANAGAR"
+  },
+  "KHEDA": {
+    "lat": 22.8369999987339,
+    "lng": 72.95092731154455,
+    "display_name": "KHEDA"
+  },
+  "ANAND": {
+    "lat": 22.46478211558705,
+    "lng": 72.78655559248233,
+    "display_name": "ANAND"
+  },
+  "KISHANGANJ": {
+    "lat": 26.292847493063487,
+    "lng": 87.94058562315394,
+    "display_name": "KISHANGANJ"
+  },
+  "MORBI": {
+    "lat": 22.835856583662036,
+    "lng": 70.92781310409163,
+    "display_name": "MORBI"
+  },
+  "LEH": {
+    "lat": 35.037918601308874,
+    "lng": 76.8039771423206,
+    "display_name": "LEH"
+  },
+  "KARGIL": {
+    "lat": 33.89584648006676,
+    "lng": 76.49680197498007,
+    "display_name": "KARGIL"
+  },
+  "KUPWARA": {
+    "lat": 34.52482329621324,
+    "lng": 74.21414999577694,
+    "display_name": "KUPWARA"
+  },
+  "BANDIPORA": {
+    "lat": 34.491067355250976,
+    "lng": 74.87201371860064,
+    "display_name": "BANDIPORA"
+  },
+  "BARAMULLA": {
+    "lat": 34.1623621872265,
+    "lng": 74.30681593507543,
+    "display_name": "BARAMULLA"
+  },
+  "GANDERBAL": {
+    "lat": 34.28064565447338,
+    "lng": 75.02853611471927,
+    "display_name": "GANDERBAL"
+  },
+  "ANANTNAG": {
+    "lat": 33.827801897803845,
+    "lng": 75.32175049306719,
+    "display_name": "ANANTNAG"
+  },
+  "KISHTWAR": {
+    "lat": 33.55018371701321,
+    "lng": 75.96601797169897,
+    "display_name": "KISHTWAR"
+  },
+  "SRINAGAR": {
+    "lat": 34.117153915582705,
+    "lng": 74.91768352117596,
+    "display_name": "SRINAGAR"
+  },
+  "BUDGAM": {
+    "lat": 33.92431881062261,
+    "lng": 74.64063372682818,
+    "display_name": "BUDGAM"
+  },
+  "PULWAMA": {
+    "lat": 33.938093159768556,
+    "lng": 75.01623866115648,
+    "display_name": "PULWAMA"
+  },
+  "PUNCH": {
+    "lat": 33.80199204793342,
+    "lng": 74.01656955028596,
+    "display_name": "PUNCH"
+  },
+  "SHOPIYAN": {
+    "lat": 33.72971154181815,
+    "lng": 74.82198385828048,
+    "display_name": "SHOPIYAN"
+  },
+  "KULGAM": {
+    "lat": 33.60262661242902,
+    "lng": 74.84737772017277,
+    "display_name": "KULGAM"
+  },
+  "RAJOURI": {
+    "lat": 33.2708321418223,
+    "lng": 74.3876982758072,
+    "display_name": "RAJOURI"
+  },
+  "RAMBAN": {
+    "lat": 33.32587988128956,
+    "lng": 75.19212199606554,
+    "display_name": "RAMBAN"
+  },
+  "REASI": {
+    "lat": 33.223629291590434,
+    "lng": 74.85161149454552,
+    "display_name": "REASI"
+  },
+  "DODA": {
+    "lat": 33.08898828785644,
+    "lng": 75.70536684422325,
+    "display_name": "DODA"
+  },
+  "LAHAUL AND SPITI": {
+    "lat": 32.479902160230395,
+    "lng": 77.6194340161805,
+    "display_name": "LAHAUL AND SPITI"
+  },
+  "CHAMBA": {
+    "lat": 32.6811862408617,
+    "lng": 76.34875931054623,
+    "display_name": "CHAMBA"
+  },
+  "JAMMU": {
+    "lat": 32.796461909010915,
+    "lng": 74.75021821256016,
+    "display_name": "JAMMU"
+  },
+  "KATHUA": {
+    "lat": 32.5823824549044,
+    "lng": 75.58657556400568,
+    "display_name": "KATHUA"
+  },
+  "GURDASPUR": {
+    "lat": 31.91032886881038,
+    "lng": 75.29039562546666,
+    "display_name": "GURDASPUR"
+  },
+  "KANGRA": {
+    "lat": 32.11087368036674,
+    "lng": 76.31586991261433,
+    "display_name": "KANGRA"
+  },
+  "KULLU": {
+    "lat": 31.89966253720043,
+    "lng": 77.39906492413787,
+    "display_name": "KULLU"
+  },
+  "HOSHIARPUR": {
+    "lat": 31.62299171068434,
+    "lng": 75.85759800471774,
+    "display_name": "HOSHIARPUR"
+  },
+  "AMRITSAR": {
+    "lat": 31.702462055203796,
+    "lng": 74.89732216739601,
+    "display_name": "AMRITSAR"
+  },
+  "MANDI": {
+    "lat": 31.634815718269827,
+    "lng": 76.99126133741264,
+    "display_name": "MANDI"
+  },
+  "KINNAUR": {
+    "lat": 31.60112360990109,
+    "lng": 78.40334044204462,
+    "display_name": "KINNAUR"
+  },
+  "UNA": {
+    "lat": 31.583547798983005,
+    "lng": 76.20927429240761,
+    "display_name": "UNA"
+  },
+  "SHIMLA": {
+    "lat": 31.190393513782187,
+    "lng": 77.63981884087369,
+    "display_name": "SHIMLA"
+  },
+  "JALANDHAR": {
+    "lat": 31.2119881612796,
+    "lng": 75.57553327663067,
+    "display_name": "JALANDHAR"
+  },
+  "TARN TARAN": {
+    "lat": 31.341728237073934,
+    "lng": 74.847634769146,
+    "display_name": "TARN TARAN"
+  },
+  "RUPNAGAR": {
+    "lat": 31.063691466332894,
+    "lng": 76.48701023438745,
+    "display_name": "RUPNAGAR"
+  },
+  "UTTARKASHI": {
+    "lat": 30.972793220751107,
+    "lng": 78.60447696276718,
+    "display_name": "UTTARKASHI"
+  },
+  "SOLAN": {
+    "lat": 31.045838354287362,
+    "lng": 76.90956769138705,
+    "display_name": "SOLAN"
+  },
+  "SHAHID BHAGAT SINGH NAGAR": {
+    "lat": 31.112520773581235,
+    "lng": 76.14580123309283,
+    "display_name": "SHAHID BHAGAT SINGH NAGAR"
+  },
+  "FAZILKA": {
+    "lat": 30.279291883455965,
+    "lng": 74.16519155395993,
+    "display_name": "FAZILKA"
+  },
+  "MOGA": {
+    "lat": 30.767003727414473,
+    "lng": 75.17183090789477,
+    "display_name": "MOGA"
+  },
+  "LUDHIANA": {
+    "lat": 30.80608180086379,
+    "lng": 75.83467604315179,
+    "display_name": "LUDHIANA"
+  },
+  "CHAMOLI": {
+    "lat": 30.494315682935635,
+    "lng": 79.57610110972115,
+    "display_name": "CHAMOLI"
+  },
+  "DEHRADUN": {
+    "lat": 30.46058304513832,
+    "lng": 77.97166318311459,
+    "display_name": "DEHRADUN"
+  },
+  "SIRMAUR": {
+    "lat": 30.666050329061623,
+    "lng": 77.427579491556,
+    "display_name": "SIRMAUR"
+  },
+  "S.A.S. NAGAR": {
+    "lat": 30.689669150678178,
+    "lng": 76.73673320775352,
+    "display_name": "S.A.S. NAGAR"
+  },
+  "FARIDKOT": {
+    "lat": 30.616901916850974,
+    "lng": 74.77531349937647,
+    "display_name": "FARIDKOT"
+  },
+  "FATEHGARH SAHIB": {
+    "lat": 30.644538139234736,
+    "lng": 76.37792019782508,
+    "display_name": "FATEHGARH SAHIB"
+  },
+  "TEHRI GARHWAL": {
+    "lat": 30.43735146795929,
+    "lng": 78.5365953597025,
+    "display_name": "TEHRI GARHWAL"
+  },
+  "CHANDIGARH_CHANDIGARH": {
+    "lat": 30.72463408362142,
+    "lng": 76.77936158896233,
+    "display_name": "CHANDIGARH"
+  },
+  "SRI MUKTSAR SAHIB": {
+    "lat": 30.296848499663323,
+    "lng": 74.53953609744333,
+    "display_name": "SRI MUKTSAR SAHIB"
+  },
+  "RUDRAPRAYAG": {
+    "lat": 30.508607522349827,
+    "lng": 79.05144601718051,
+    "display_name": "RUDRAPRAYAG"
+  },
+  "PITHORAGARH": {
+    "lat": 30.121372682970307,
+    "lng": 80.34935622375721,
+    "display_name": "PITHORAGARH"
+  },
+  "SANGRUR": {
+    "lat": 30.213532274722038,
+    "lng": 75.86972012593766,
+    "display_name": "SANGRUR"
+  },
+  "BARNALA": {
+    "lat": 30.389773636264383,
+    "lng": 75.50034921717705,
+    "display_name": "BARNALA"
+  },
+  "BATHINDA": {
+    "lat": 30.191854702994114,
+    "lng": 75.04072510777806,
+    "display_name": "BATHINDA"
+  },
+  "PATIALA": {
+    "lat": 30.283185871509588,
+    "lng": 76.34809075998787,
+    "display_name": "PATIALA"
+  },
+  "YAMUNANAGAR": {
+    "lat": 30.23534066396638,
+    "lng": 77.30350591371557,
+    "display_name": "YAMUNANAGAR"
+  },
+  "SAHARANPUR": {
+    "lat": 29.953085055903628,
+    "lng": 77.55066543726728,
+    "display_name": "SAHARANPUR"
+  },
+  "GANGANAGAR": {
+    "lat": 29.3951682793041,
+    "lng": 73.57158174146363,
+    "display_name": "GANGANAGAR"
+  },
+  "MANSA": {
+    "lat": 29.919020945697902,
+    "lng": 75.43317590220079,
+    "display_name": "MANSA"
+  },
+  "KURUKSHETRA": {
+    "lat": 30.039304440070826,
+    "lng": 76.77791049587019,
+    "display_name": "KURUKSHETRA"
+  },
+  "BAGESHWAR": {
+    "lat": 29.984873650536763,
+    "lng": 79.86229368904313,
+    "display_name": "BAGESHWAR"
+  },
+  "HARIDWAR": {
+    "lat": 29.882153230743597,
+    "lng": 77.99383001421924,
+    "display_name": "HARIDWAR"
+  },
+  "PAURI GARHWAL": {
+    "lat": 29.883348630127443,
+    "lng": 78.76078306315155,
+    "display_name": "PAURI GARHWAL"
+  },
+  "KAITHAL": {
+    "lat": 29.805588685961773,
+    "lng": 76.41476712328738,
+    "display_name": "KAITHAL"
+  },
+  "SIRSA": {
+    "lat": 29.6202220246173,
+    "lng": 74.90790291277193,
+    "display_name": "SIRSA"
+  },
+  "HANUMANGARH": {
+    "lat": 29.265042319915608,
+    "lng": 74.56991337205075,
+    "display_name": "HANUMANGARH"
+  },
+  "KARNAL": {
+    "lat": 29.690194797919045,
+    "lng": 76.89840591039047,
+    "display_name": "KARNAL"
+  },
+  "ALMORA": {
+    "lat": 29.69157980238344,
+    "lng": 79.50311460178328,
+    "display_name": "ALMORA"
+  },
+  "JIND": {
+    "lat": 29.435145162158435,
+    "lng": 76.3152463011886,
+    "display_name": "JIND"
+  },
+  "FATEHABAD": {
+    "lat": 29.575382990138536,
+    "lng": 75.57707123962204,
+    "display_name": "FATEHABAD"
+  },
+  "BIJNOR": {
+    "lat": 29.386936850289917,
+    "lng": 78.39021723655887,
+    "display_name": "BIJNOR"
+  },
+  "MUZAFFARNAGAR": {
+    "lat": 29.41851974720073,
+    "lng": 77.7288900971345,
+    "display_name": "MUZAFFARNAGAR"
+  },
+  "HISAR": {
+    "lat": 29.219179609150913,
+    "lng": 75.82442858903758,
+    "display_name": "HISAR"
+  },
+  "NAINITAL": {
+    "lat": 29.319801033095644,
+    "lng": 79.46681015330496,
+    "display_name": "NAINITAL"
+  },
+  "PANIPAT": {
+    "lat": 29.337817470608183,
+    "lng": 76.93405787841641,
+    "display_name": "PANIPAT"
+  },
+  "CHAMPAWAT": {
+    "lat": 29.277979249447853,
+    "lng": 80.07665585312067,
+    "display_name": "CHAMPAWAT"
+  },
+  "UDHAM SINGH NAGAR": {
+    "lat": 29.03785855937133,
+    "lng": 79.47778575005881,
+    "display_name": "UDHAM SINGH NAGAR"
+  },
+  "SONIPAT": {
+    "lat": 29.055631497283567,
+    "lng": 76.88163678502279,
+    "display_name": "SONIPAT"
+  },
+  "BAGHPAT": {
+    "lat": 29.06830787785132,
+    "lng": 77.3100654188003,
+    "display_name": "BAGHPAT"
+  },
+  "MEERUT": {
+    "lat": 29.033658805823688,
+    "lng": 77.78826969823908,
+    "display_name": "MEERUT"
+  },
+  "MORADABAD": {
+    "lat": 28.89712474394481,
+    "lng": 78.78529036912087,
+    "display_name": "MORADABAD"
+  },
+  "BIKANER": {
+    "lat": 28.177293009444934,
+    "lng": 73.1751738653284,
+    "display_name": "BIKANER"
+  },
+  "RAMPUR": {
+    "lat": 28.819401359544273,
+    "lng": 79.1147527845894,
+    "display_name": "RAMPUR"
+  },
+  "BHIWANI": {
+    "lat": 28.787911609196424,
+    "lng": 75.89456860030428,
+    "display_name": "BHIWANI"
+  },
+  "ROHTAK": {
+    "lat": 28.915683231172178,
+    "lng": 76.53187612109,
+    "display_name": "ROHTAK"
+  },
+  "SHAMLI": {
+    "lat": 29.496601497895952,
+    "lng": 77.2839940628743,
+    "display_name": "SHAMLI"
+  },
+  "FEROZEPUR": {
+    "lat": 30.914939314214376,
+    "lng": 74.69908739305318,
+    "display_name": "FEROZEPUR"
+  },
+  "PATHANKOT": {
+    "lat": 32.29858125125884,
+    "lng": 75.62177506548348,
+    "display_name": "PATHANKOT"
+  },
+  "UDHAMPUR": {
+    "lat": 32.90110820687574,
+    "lng": 75.30386957705905,
+    "display_name": "UDHAMPUR"
+  },
+  "SAMBA": {
+    "lat": 32.58029354680143,
+    "lng": 75.09051973140078,
+    "display_name": "SAMBA"
+  },
+  "KAPURTHALA": {
+    "lat": 31.355104443949223,
+    "lng": 75.38541721824188,
+    "display_name": "KAPURTHALA"
+  },
+  "PANCHKULA": {
+    "lat": 30.678930299793265,
+    "lng": 76.9784629145721,
+    "display_name": "PANCHKULA"
+  },
+  "AMBALA": {
+    "lat": 30.333147151822324,
+    "lng": 76.93402501254184,
+    "display_name": "AMBALA"
+  },
+  "AURANGABAD_BIHAR": {
+    "lat": 24.79459882542993,
+    "lng": 84.40830274341789,
+    "display_name": "AURANGABAD"
+  },
+  "BALRAMPUR_CHHATTISGARH": {
+    "lat": 23.587740203603612,
+    "lng": 83.49944948448302,
+    "display_name": "BALRAMPUR"
+  },
+  "BALRAMPUR_UTTAR PRADESH": {
+    "lat": 27.488129768127344,
+    "lng": 82.37239090910816,
+    "display_name": "BALRAMPUR"
+  },
+  "HAMIRPUR_UTTAR PRADESH": {
+    "lat": 25.74409454452171,
+    "lng": 79.85604459311327,
+    "display_name": "HAMIRPUR"
+  },
+  "HAMIRPUR_HIMACHAL PRADESH": {
+    "lat": 31.668654589913345,
+    "lng": 76.52835693667852,
+    "display_name": "HAMIRPUR"
+  },
+  "PRATAPGARH_RAJASTHAN": {
+    "lat": 24.02617260771188,
+    "lng": 74.65003775003706,
+    "display_name": "PRATAPGARH"
+  },
+  "PRATAPGARH_UTTAR PRADESH": {
+    "lat": 25.868836405313125,
+    "lng": 81.8281285282123,
+    "display_name": "PRATAPGARH"
+  },
+  "BILASPUR_HIMACHAL PRADESH": {
+    "lat": 31.37546971988782,
+    "lng": 76.6585325903224,
+    "display_name": "BILASPUR"
+  },
+  "NIWARI": {
+    "lat": 25.273660226070653,
+    "lng": 78.75382434111714,
+    "display_name": "NIWARI"
+  },
+  "MUZAFFARABAD": {
+    "lat": 34.58866257018037,
+    "lng": 73.91541799199734,
+    "display_name": "MUZAFFARABAD"
+  },
+  "MIRPUR": {
+    "lat": 33.25334129742683,
+    "lng": 73.93229040232073,
+    "display_name": "MIRPUR"
+  }
+}

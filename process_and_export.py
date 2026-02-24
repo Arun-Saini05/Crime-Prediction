@@ -136,11 +136,17 @@ def load_and_process_data():
         # Get latest actual WCI
         actual_wci = series[-1]
         
-        # Calculate percentage change
-        if actual_wci > 0:
+        # Calculate percentage change (capped to avoid extreme values for low-WCI districts)
+        if actual_wci > 0.1:
             change = ((predicted_wci - actual_wci) / actual_wci) * 100
+        elif actual_wci > 0:
+            # For very low WCI, use absolute difference scaled to avoid huge %
+            change = (predicted_wci - actual_wci) * 100
         else:
             change = 0.0
+        
+        # Cap to reasonable range: -95% to +200%
+        change = max(-95.0, min(200.0, change))
         
         trend_map[district] = change
         prediction_map[district] = predicted_wci
@@ -223,6 +229,7 @@ def load_and_process_data():
     # 5. Graph Construction
     print("Building Spatial Graph...")
     adj_list = {}
+    centroids = {}  # Store centroid lat/lng for A* heuristic
     
     # Filter valid geometries
     valid_gdf = gdf_final[gdf_final.geometry.is_valid] 
@@ -234,6 +241,10 @@ def load_and_process_data():
         district = row['district_std']
         # If district name is missing or empty, skip
         if not district or pd.isna(district): continue
+        
+        # Store centroid coordinates (in degrees, useful as A* heuristic)
+        centroid = row.geometry.centroid
+        centroids[district] = {'lat': centroid.y, 'lng': centroid.x}
             
         # Find neighbors using spatial index
         possible_matches_index = list(sindex.intersection(row.geometry.bounds))
@@ -246,27 +257,36 @@ def load_and_process_data():
             if neighbor_name == district: continue # Skip self
             if not neighbor_name or pd.isna(neighbor_name): continue
             
-            # Distance
+            # Distance (in degrees, geographic units)
             dist = row.geometry.centroid.distance(neighbor_row.geometry.centroid)
             
-            # Risk
+            # Absolute WCI of the neighbour district
             risk = neighbor_row['WCI']
-            
-            # Weight formula - Threshold-based non-linear penalty
-            # Goal: Strictly avoid RED (High), tolerate ORANGE (Medium) if short, prefer GREEN (Low)
-            
             target_category = neighbor_row['Hotspot_Category']
-            
-            if target_category == 'High':
-                penalty_multiplier = 10.0 # Heavy penalty: 1km -> 10km effective
-            elif target_category == 'Medium':
-                penalty_multiplier = 2.0 # Mild penalty: 1km -> 2km effective
-            else: # Low or No Data
-                penalty_multiplier = 1.0 # No extra penalty: 1km -> 1km effective
-                
-            # Base weight is distance * multiplier
-            # We also add a small linear factor of risk to differentiate within categories
-            # weight = dist * (penalty_multiplier + (risk * 0.1)) 
+
+            # ── WCI-Proportional Weight Formula ─────────────────────────────
+            # Use the neighbour's ACTUAL WCI value (not just its category label)
+            # to compute the penalty. This prevents tiny-WCI "High" districts
+            # (e.g. SURAT WCI=1.9, AJMER WCI=0.9) from receiving the same
+            # extreme 10× penalty as heavily-criminalised districts.
+            #
+            #   weight = dist × (1 + normalised_WCI × PENALTY_SCALE)
+            #
+            # where:
+            #   wci_max      = approximate upper bound for normalisation (99th pct)
+            #   PENALTY_SCALE = 9  → max multiplier = 1+9 = 10× (same ceiling)
+            #   Low WCI ≈ 0   → multiplier ≈ 1× (no extra cost)
+            #   High WCI ≈ max → multiplier ≈ 10× (heavy cost)
+            # ────────────────────────────────────────────────────────────────
+            wci_max = df_latest['WCI'].quantile(0.99)  # ~99th percentile as ceiling
+            PENALTY_SCALE = 9.0
+
+            if wci_max > 0:
+                normalised_wci = min(risk / wci_max, 1.0)
+            else:
+                normalised_wci = 0.0
+
+            penalty_multiplier = 1.0 + normalised_wci * PENALTY_SCALE
             weight = dist * penalty_multiplier
 
             edges.append({
@@ -294,6 +314,11 @@ def load_and_process_data():
     with open(output_graph, 'w') as f:
         json.dump(adj_list, f, indent=2)
     print(f"Exported graph data to {output_graph}")
+    
+    output_centroids = os.path.join(EXPORT_DIR, 'district_centroids.json')
+    with open(output_centroids, 'w') as f:
+        json.dump(centroids, f, indent=2)
+    print(f"Exported district centroids to {output_centroids} ({len(centroids)} districts)")
 
 if __name__ == "__main__":
     load_and_process_data()
