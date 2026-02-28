@@ -5,6 +5,7 @@ import numpy as np
 import json
 import os
 import datetime
+import math
 
 # --- Configuration ---
 DATA_FILE = 'cleaned_crime_dataset_ready.csv'
@@ -49,7 +50,24 @@ def load_and_process_data():
     df['Others_WCI'] = df[other_crimes].sum(axis=1) * crime_severity_weights['Others']
     
     df['WCI'] = df['Heinous_WCI'] + df['Serious_WCI'] + df['Property_WCI'] + df['Others_WCI']
-    
+
+    # --- Road Crime Score (RCS) ---
+    # Weighted sum of 4 road-related columns (already normalized 0-10 in CSV)
+    road_crime_cols_weights = [
+        ('incidence_of_rash_driving',    1.0),
+        ('motor_vehicle_act',            0.8),
+        ('causing_death_by_negligence',  0.9),
+        ('robbery',                      0.6),
+    ]
+    df['Road_Crime_Score'] = sum(
+        df[col] * w if col in df.columns else 0
+        for col, w in road_crime_cols_weights
+    )
+    # Keep raw sub-scores available for export
+    for col, _ in road_crime_cols_weights:
+        if col not in df.columns:
+            df[col] = 0.0
+
     # Standardize District Names
     df['district_std'] = df['district'].str.upper().str.strip()
 
@@ -160,6 +178,74 @@ def load_and_process_data():
         change = trend_map.get(d, 0)
         print(f"  {d}: Actual={actual:.4f} -> Predicted={predicted:.4f} ({change:+.1f}%)")
 
+    # ── LSTM 2: Road Crime Score Trend ────────────────────────────────────────
+    print("=" * 60)
+    print("LSTM 2 — Road Crime Prediction Pipeline")
+    print("=" * 60)
+
+    pivot_rcs = df.pivot_table(index='district_std', columns='year', values='Road_Crime_Score', aggfunc='mean')
+    pivot_rcs = pivot_rcs.fillna(0)
+
+    # Only train on districts that have at least some non-zero road crime data
+    active_rcs = pivot_rcs[pivot_rcs.max(axis=1) > 0]
+    print(f"Districts with road crime data: {len(active_rcs)}")
+
+    rcs_X, rcs_y = [], []
+    rcs_scales = {}
+
+    for district in active_rcs.index:
+        series = active_rcs.loc[district].values.astype(float)
+        d_min, d_max = series.min(), series.max()
+        rcs_scales[district] = (d_min, d_max)
+        if d_max - d_min > 0:
+            scaled = (series - d_min) / (d_max - d_min)
+        else:
+            scaled = np.zeros_like(series)
+        for j in range(len(scaled) - time_step):
+            rcs_X.append(scaled[j:j + time_step])
+            rcs_y.append(scaled[j + time_step])
+
+    rcs_X = np.array(rcs_X)
+    rcs_y = np.array(rcs_y)
+    rcs_X_reshaped = rcs_X.reshape(rcs_X.shape[0], rcs_X.shape[1], 1)
+    print(f"Road crime sequences: {len(rcs_X)}, X shape: {rcs_X_reshaped.shape}")
+
+    # Build & train Road Crime LSTM (same architecture as WCI LSTM)
+    rcs_model = Sequential()
+    rcs_model.add(LSTM(50, activation='relu', input_shape=(time_step, 1)))
+    rcs_model.add(Dense(1))
+    rcs_model.compile(optimizer='adam', loss='mean_squared_error')
+    print("Training Road Crime LSTM (50 epochs)...")
+    rcs_model.fit(rcs_X_reshaped, rcs_y, epochs=50, batch_size=32, verbose=0)
+    print("[OK] Road Crime LSTM training complete!")
+
+    # Predict road crime trend per district
+    road_crime_trend_map = {}
+    for district in active_rcs.index:
+        series = active_rcs.loc[district].values.astype(float)
+        d_min, d_max = rcs_scales[district]
+        if d_max - d_min > 0:
+            scaled = (series - d_min) / (d_max - d_min)
+        else:
+            scaled = np.zeros_like(series)
+        last_seq = scaled[-time_step:].reshape(1, time_step, 1)
+        pred_scaled = rcs_model.predict(last_seq, verbose=0)[0][0]
+        pred_rcs = pred_scaled * (d_max - d_min) + d_min
+        actual_rcs = series[-1]
+        if actual_rcs > 0.01:
+            change = ((pred_rcs - actual_rcs) / actual_rcs) * 100
+        elif actual_rcs > 0:
+            change = (pred_rcs - actual_rcs) * 100
+        else:
+            change = 0.0
+        change = max(-95.0, min(200.0, change))
+        road_crime_trend_map[district] = change
+
+    print(f"\n[LSTM-2] Sample Road Crime Predictions (vs {latest_year} actual):")
+    for d in list(active_rcs.index)[:5]:
+        print(f"  {d}: {road_crime_trend_map.get(d, 0):+.1f}%")
+    # ─────────────────────────────────────────────────────────────────────────
+
     # 3. Hotspot Classification (on Latest Data)
     print(f"Latest Year: {latest_year}")
     df_latest = df[df['year'] == latest_year].copy()
@@ -174,13 +260,19 @@ def load_and_process_data():
         print("Mumbai data NOT found in latest year.")
     
     # Group by district in case of duplicates in latest year (shouldn't happen but safe)
-    df_latest = df_latest.groupby('district_std').agg({
+    agg_dict = {
         'WCI': 'mean',
         'Heinous_WCI': 'mean',
         'Serious_WCI': 'mean',
         'Property_WCI': 'mean',
-        'Others_WCI': 'mean'
-    }).reset_index()
+        'Others_WCI': 'mean',
+        'Road_Crime_Score': 'mean',
+        'incidence_of_rash_driving': 'mean',
+        'motor_vehicle_act': 'mean',
+        'causing_death_by_negligence': 'mean',
+        'robbery': 'mean',
+    }
+    df_latest = df_latest.groupby('district_std').agg(agg_dict).reset_index()
 
     percentile_80 = df_latest['WCI'].quantile(0.80)
     percentile_40 = df_latest['WCI'].quantile(0.40)
@@ -191,9 +283,31 @@ def load_and_process_data():
         return 'Low'
     
     df_latest['Hotspot_Category'] = df_latest['WCI'].apply(classify)
-    
+
+    # Road Crime Classification -- only classify districts with non-zero RCS
+    # (zero RCS means state did not report road crime data; mark as No Data)
+    nonzero_mask = df_latest['Road_Crime_Score'] > 0
+    nonzero_rcs = df_latest.loc[nonzero_mask, 'Road_Crime_Score']
+    if len(nonzero_rcs) > 0:
+        rcs_high_cut = nonzero_rcs.quantile(0.66)
+        rcs_med_cut  = nonzero_rcs.quantile(0.33)
+        def classify_road(rcs):
+            if rcs <= 0:             return 'No Data'
+            if rcs >= rcs_high_cut:  return 'High'
+            if rcs >= rcs_med_cut:   return 'Medium'
+            return 'Low'
+    else:
+        def classify_road(rcs):
+            return 'No Data'
+    df_latest['Road_Crime_Category'] = df_latest['Road_Crime_Score'].apply(classify_road)
+    cats = df_latest['Road_Crime_Category'].value_counts().to_dict()
+    print(f'Road Crime categories: {cats}')
+
     # Add Trend and Date
     df_latest['Future_Increase_Chance'] = df_latest['district_std'].map(trend_map).fillna(0).apply(lambda x: f"{x:.1f}%")
+    df_latest['Road_Crime_Future_Trend'] = df_latest['district_std'].map(road_crime_trend_map).apply(
+        lambda x: f"{x:+.1f}%" if x is not None and not np.isnan(float(x if x is not None else float('nan'))) else None
+    )
     df_latest['Analysis_Date'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # 4. Geo Preparation
@@ -225,6 +339,17 @@ def load_and_process_data():
     gdf_final['Hotspot_Category'] = gdf_final['Hotspot_Category'].fillna('No Data')
     gdf_final['Future_Increase_Chance'] = gdf_final['Future_Increase_Chance'].fillna('N/A')
     gdf_final['Analysis_Date'] = gdf_final['Analysis_Date'].fillna(datetime.datetime.now().strftime("%Y-%m-%d"))
+    gdf_final['Road_Crime_Score'] = gdf_final['Road_Crime_Score'].fillna(0)
+    gdf_final['Road_Crime_Category'] = gdf_final['Road_Crime_Category'].fillna('No Data')
+    gdf_final['incidence_of_rash_driving'] = gdf_final['incidence_of_rash_driving'].fillna(0)
+    gdf_final['motor_vehicle_act'] = gdf_final['motor_vehicle_act'].fillna(0)
+    gdf_final['causing_death_by_negligence'] = gdf_final['causing_death_by_negligence'].fillna(0)
+    gdf_final['robbery'] = gdf_final['robbery'].fillna(0)
+    # Road Crime LSTM trend — keep None for districts without data (frontend handles it)
+    if 'Road_Crime_Future_Trend' in gdf_final.columns:
+        gdf_final['Road_Crime_Future_Trend'] = gdf_final['Road_Crime_Future_Trend'].where(
+            gdf_final['Road_Crime_Future_Trend'].notna(), other=None
+        )
 
     # 5. Graph Construction
     print("Building Spatial Graph...")
@@ -232,19 +357,51 @@ def load_and_process_data():
     centroids = {}  # Store centroid lat/lng for A* heuristic
     
     # Filter valid geometries
-    valid_gdf = gdf_final[gdf_final.geometry.is_valid] 
+    valid_gdf = gdf_final[gdf_final.geometry.is_valid].copy()
     
+    # Deduplicate district names
+    state_col = None
+    for col in ['state', 'State', 'STATE', 'st_nm', 'statename']:
+        if col in valid_gdf.columns:
+            state_col = col
+            break
+            
+    dup_names = valid_gdf['district_std'].value_counts()
+    dup_names = dup_names[dup_names > 1]
+    
+    if state_col:
+        valid_gdf['node_id'] = valid_gdf.apply(
+            lambda r: (r['district_std'] + '_' + str(r[state_col]).upper().strip()
+                       if r['district_std'] in dup_names.index else r['district_std']),
+            axis=1
+        )
+    else:
+        valid_gdf['node_id'] = valid_gdf.apply(
+            lambda r: (r['district_std'] + f"_{r.geometry.centroid.y:.0f}"
+                       if r['district_std'] in dup_names.index else r['district_std']),
+            axis=1
+        )
+        
     # Optimization: Use spatial index
     sindex = valid_gdf.sindex
     
+    # WCI normalisation ceiling
+    all_wci = valid_gdf['WCI'].dropna().values
+    wci_max = float(np.percentile(all_wci[all_wci > 0], 99)) if len(all_wci[all_wci > 0]) > 0 else 1.0
+    PENALTY_SCALE = 3.0  # max multiplier = 1+3 = 4x
+    
     for idx, row in valid_gdf.iterrows():
-        district = row['district_std']
-        # If district name is missing or empty, skip
-        if not district or pd.isna(district): continue
-        
-        # Store centroid coordinates (in degrees, useful as A* heuristic)
+        node = row['node_id']
+        if not node or pd.isna(node):
+            continue
+            
+        # Store centroid coordinates
         centroid = row.geometry.centroid
-        centroids[district] = {'lat': centroid.y, 'lng': centroid.x}
+        centroids[node] = {
+            'lat': centroid.y,
+            'lng': centroid.x,
+            'display_name': row['district_std']
+        }
             
         # Find neighbors using spatial index
         possible_matches_index = list(sindex.intersection(row.geometry.bounds))
@@ -252,56 +409,42 @@ def load_and_process_data():
         neighbors = possible_matches[possible_matches.geometry.touches(row.geometry)]
         
         edges = []
-        for _, neighbor_row in neighbors.iterrows():
-            neighbor_name = neighbor_row['district_std']
-            if neighbor_name == district: continue # Skip self
-            if not neighbor_name or pd.isna(neighbor_name): continue
+        for _, nrow in neighbors.iterrows():
+            nnode = nrow['node_id']
+            if nnode == node or not nnode or pd.isna(nnode):
+                continue
             
-            # Distance (in degrees, geographic units)
-            dist = row.geometry.centroid.distance(neighbor_row.geometry.centroid)
+            # Distance
+            dist = row.geometry.centroid.distance(nrow.geometry.centroid)
             
-            # Absolute WCI of the neighbour district
-            risk = neighbor_row['WCI']
-            target_category = neighbor_row['Hotspot_Category']
+            # Sanity check: if centroids are >8 degrees apart, skip (can't be real neighbours)
+            c_self = (row.geometry.centroid.y, row.geometry.centroid.x)
+            c_nb   = (nrow.geometry.centroid.y, nrow.geometry.centroid.x)
+            geo_d  = math.sqrt((c_self[0]-c_nb[0])**2 + (c_self[1]-c_nb[1])**2)
+            if geo_d > 8.0:
+                continue
+                
+            risk = nrow['WCI'] if not np.isnan(nrow['WCI']) else 0.0
+            cat  = nrow['Hotspot_Category'] if nrow['Hotspot_Category'] else 'No Data'
 
-            # ── WCI-Proportional Weight Formula ─────────────────────────────
-            # Use the neighbour's ACTUAL WCI value (not just its category label)
-            # to compute the penalty. This prevents tiny-WCI "High" districts
-            # (e.g. SURAT WCI=1.9, AJMER WCI=0.9) from receiving the same
-            # extreme 10× penalty as heavily-criminalised districts.
-            #
-            #   weight = dist × (1 + normalised_WCI × PENALTY_SCALE)
-            #
-            # where:
-            #   wci_max      = approximate upper bound for normalisation (99th pct)
-            #   PENALTY_SCALE = 9  → max multiplier = 1+9 = 10× (same ceiling)
-            #   Low WCI ≈ 0   → multiplier ≈ 1× (no extra cost)
-            #   High WCI ≈ max → multiplier ≈ 10× (heavy cost)
-            # ────────────────────────────────────────────────────────────────
-            wci_max = df_latest['WCI'].quantile(0.99)  # ~99th percentile as ceiling
-            PENALTY_SCALE = 9.0
-
-            if wci_max > 0:
-                normalised_wci = min(risk / wci_max, 1.0)
-            else:
-                normalised_wci = 0.0
-
+            normalised_wci = min(risk / wci_max, 1.0) if wci_max > 0 else 0.0
             penalty_multiplier = 1.0 + normalised_wci * PENALTY_SCALE
             weight = dist * penalty_multiplier
 
             edges.append({
-                'target': neighbor_name,
+                'target': nnode,
                 'weight': weight,
                 'distance': dist,
                 'risk': risk,
-                'category': target_category
+                'category': cat,
+                'display_name': nrow['district_std']
             })
         
-        adj_list[district] = edges
+        adj_list[node] = edges
 
     # 6. Export
     output_geojson = os.path.join(EXPORT_DIR, 'crime_data_v2.geojson')
-    gdf_final.to_file(output_geojson, driver='GeoJSON')
+    valid_gdf.to_file(output_geojson, driver='GeoJSON')
     print(f"Exported processed data to {output_geojson}")
     
     # Validation

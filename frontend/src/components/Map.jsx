@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -18,7 +18,83 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const MapComponent = ({ routePath, setHoveredDistrict }) => {
+// ── FlyToSearchTarget — defined OUTSIDE MapComponent so React never remounts it ──
+const FlyToSearchTarget = ({ target, geoData }) => {
+    const map = useMap();
+    const highlightRef = useRef(null);
+
+    useEffect(() => {
+        if (!target || !geoData) return;
+
+        let cancelled = false;
+
+        // Remove previous highlight immediately
+        if (highlightRef.current) {
+            map.removeLayer(highlightRef.current);
+            highlightRef.current = null;
+        }
+
+        if (target.type === 'state') {
+            fetch(`http://localhost:8001/api/state-boundary/${encodeURIComponent(target.name)}`)
+                .then(r => r.json())
+                .then(dissolved => {
+                    if (cancelled) return;  // effect was cleaned up — discard stale response
+                    if (dissolved.error || !dissolved.features) return;
+                    const layer = L.geoJSON(dissolved, {
+                        style: {
+                            color: '#FFFFFF',
+                            weight: 3.5,
+                            opacity: 1,
+                            fillOpacity: 0,
+                            dashArray: '',
+                        }
+                    }).addTo(map);
+                    highlightRef.current = layer;
+                    const bounds = layer.getBounds();
+                    if (bounds.isValid()) {
+                        map.flyToBounds(bounds, { padding: [50, 50], maxZoom: 7, duration: 1.2 });
+                    }
+                })
+                .catch(() => { });
+
+        } else if (target.type === 'district') {
+            const matched = geoData.features.filter(f =>
+                (f.properties.district_std || '').toUpperCase() === target.name.toUpperCase()
+            );
+            if (!matched.length) return;
+            const layer = L.geoJSON(
+                { type: 'FeatureCollection', features: matched },
+                {
+                    style: {
+                        color: '#FFFFFF',
+                        weight: 4,
+                        fillColor: '#FFFFFF',
+                        fillOpacity: 0.25,
+                        dashArray: '',
+                    }
+                }
+            ).addTo(map);
+            highlightRef.current = layer;
+            const bounds = layer.getBounds();
+            if (bounds.isValid()) {
+                map.flyToBounds(bounds, { padding: [50, 50], maxZoom: 9, duration: 1.2 });
+            }
+        }
+
+        return () => {
+            cancelled = true;  // cancel any in-flight fetch
+            if (highlightRef.current) {
+                map.removeLayer(highlightRef.current);
+                highlightRef.current = null;
+            }
+        };
+    }, [target]);
+
+    return null;
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
+const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }) => {
     const [geoData, setGeoData] = useState(null);
     const [selectedDistrict, setSelectedDistrict] = useState(null);
     const [routeCoords, setRouteCoords] = useState([]);
@@ -46,7 +122,7 @@ const MapComponent = ({ routePath, setHoveredDistrict }) => {
     useEffect(() => {
         // Fetch GeoJSON from backend with cache busting (V3)
         const timestamp = new Date().getTime();
-        axios.get(`http://localhost:8000/api/districts_v3?t=${timestamp}`)
+        axios.get(`http://localhost:8001/api/districts_v3?t=${timestamp}`)
             .then(res => {
                 if (res.data.error) {
                     console.error("Backend Error:", res.data.error);
@@ -98,7 +174,17 @@ const MapComponent = ({ routePath, setHoveredDistrict }) => {
                     wci: feature.properties.WCI || 0,
                     category: feature.properties.Hotspot_Category || "No Data",
                     futureChance: feature.properties.Future_Increase_Chance || "N/A",
-                    date: feature.properties.Analysis_Date || new Date().toLocaleDateString()
+                    date: feature.properties.Analysis_Date || new Date().toLocaleDateString(),
+                    // Road crime data
+                    roadCrimeCategory: feature.properties.Road_Crime_Category || "No Data",
+                    roadCrimeScore: feature.properties.Road_Crime_Score || 0,
+                    rashDriving: feature.properties.incidence_of_rash_driving || 0,
+                    motorVehicle: feature.properties.motor_vehicle_act || 0,
+                    deathByNegligence: feature.properties.causing_death_by_negligence || 0,
+                    robbery: feature.properties.robbery || 0,
+                    // Total crimes + road-crime-specific YoY trend
+                    totalCrimes: feature.properties.Total_Crimes || 0,
+                    roadCrimeTrend: feature.properties.Road_Crime_Future_Trend || null,
                 });
             },
             mouseout: (e) => {
@@ -114,8 +200,7 @@ const MapComponent = ({ routePath, setHoveredDistrict }) => {
         });
     };
 
-    // Component to update view when route path changes?
-    // Simplified for now.
+    // ─────────────────────────────────────────────────────────────────────────
 
     return (
         <div className="h-full w-full z-0">
@@ -123,16 +208,30 @@ const MapComponent = ({ routePath, setHoveredDistrict }) => {
                 <ZoomControl position="bottomleft" />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" // Dark theme map
+                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" // Dark theme base map
                 />
+
+                {/* Roadway Overlay */}
+                {showRoads && (
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        opacity={0.35} // Slight transparency so dark map and crime colors still show through
+                        className="map-tiles-roads-only"
+                    />
+                )}
 
                 {geoData && (
                     <GeoJSON
-                        key="crime-districts-v3" // Final V3 Key to force fresh mount
+                        key="crime-districts-v3"
                         data={geoData}
                         style={style}
                         onEachFeature={onEachFeature}
                     />
+                )}
+
+                {/* Search zoom + highlight */}
+                {geoData && searchTarget && (
+                    <FlyToSearchTarget target={searchTarget} geoData={geoData} />
                 )}
 
                 {/* Route Visualization */}

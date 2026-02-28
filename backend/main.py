@@ -199,6 +199,203 @@ def get_safest_route(request: RouteRequest):
     except Exception as e:
         return {"error": str(e)}
 
+@app.get("/api/road-crimes")
+def get_road_crimes():
+    """Return road crime classification data for all districts."""
+    if not crime_data:
+        return {"error": "Data not loaded"}
+
+    results = []
+    for feature in crime_data['features']:
+        props = feature['properties']
+        district = props.get('district_std') or props.get('district')
+        if not district:
+            continue
+        results.append({
+            "district": district,
+            "state": props.get('st_nm', 'Unknown'),
+            "road_crime_score": round(props.get('Road_Crime_Score', 0), 4),
+            "road_crime_category": props.get('Road_Crime_Category', 'No Data'),
+            "rash_driving": round(props.get('incidence_of_rash_driving', 0), 4),
+            "motor_vehicle": round(props.get('motor_vehicle_act', 0), 4),
+            "death_by_negligence": round(props.get('causing_death_by_negligence', 0), 4),
+            "robbery": round(props.get('robbery', 0), 4),
+        })
+    return results
+
+
+@app.get("/api/state-boundary/{state_name}")
+def get_state_boundary(state_name: str):
+    """Return a dissolved (outer boundary only) GeoJSON polygon for a state."""
+    import geopandas as gpd
+    from shapely.ops import unary_union
+    import json as _json
+
+    geojson_path = os.path.join(DATA_DIR, "crime_data_v2.geojson")
+    if not os.path.exists(geojson_path):
+        return {"error": "GeoJSON not found"}
+
+    gdf = gpd.read_file(geojson_path)
+    query = state_name.strip().upper()
+
+    # Match state (case-insensitive)
+    mask = gdf['st_nm'].str.upper().str.strip() == query
+    state_gdf = gdf[mask]
+
+    if state_gdf.empty:
+        # Try partial match
+        mask = gdf['st_nm'].str.upper().str.strip().str.contains(query, na=False)
+        state_gdf = gdf[mask]
+
+    if state_gdf.empty:
+        return {"error": f"State '{state_name}' not found"}
+
+    # Dissolve all districts into a single polygon
+    dissolved = unary_union(state_gdf.geometry)
+    dissolved_gdf = gpd.GeoDataFrame(geometry=[dissolved], crs=gdf.crs)
+    return _json.loads(dissolved_gdf.to_json())
+
+
+@app.get("/api/search")
+def search(q: str = ""):
+    """Search for a district or state by name. Returns district info or state-level aggregates."""
+    if not crime_data or not q.strip():
+        return {"type": "error", "message": "No query provided"}
+
+    query = q.strip().upper()
+    features = crime_data['features']
+
+    # ── 1. Try exact / partial district match first ──────────────────────────
+    district_matches = [
+        f['properties'] for f in features
+        if query in (f['properties'].get('district_std') or '').upper()
+    ]
+    if len(district_matches) == 1 or (district_matches and district_matches[0].get('district_std', '').upper() == query):
+        p = district_matches[0]
+        return {
+            "type": "district",
+            "name": p.get('district_std'),
+            "state": p.get('st_nm'),
+            "category": p.get('Hotspot_Category', 'No Data'),
+            "wci": round(p.get('WCI', 0), 3),
+            "future_trend": p.get('Future_Increase_Chance', 'N/A'),
+            "road_crime_category": p.get('Road_Crime_Category', 'No Data'),
+            "road_crime_trend": p.get('Road_Crime_Future_Trend'),
+        }
+
+    # ── 2. Try state match ───────────────────────────────────────────────────
+    state_districts = [
+        f['properties'] for f in features
+        if query in (f['properties'].get('st_nm') or '').upper()
+    ]
+    if state_districts:
+        state_name = state_districts[0].get('st_nm', query.title())
+        count = len(state_districts)
+
+        wci_values = [p.get('WCI', 0) for p in state_districts if p.get('WCI') is not None]
+        avg_wci = round(sum(wci_values) / len(wci_values), 3) if wci_values else 0
+
+        # Parse numeric trends and average them
+        trend_values = []
+        for p in state_districts:
+            t = p.get('Future_Increase_Chance', '')
+            try:
+                trend_values.append(float(str(t).replace('%', '')))
+            except Exception:
+                pass
+        avg_trend = round(sum(trend_values) / len(trend_values), 1) if trend_values else None
+        avg_trend_str = f"{avg_trend:+.1f}%" if avg_trend is not None else "N/A"
+
+        # Risk distribution
+        cats = [p.get('Hotspot_Category', 'No Data') for p in state_districts]
+        high_count = cats.count('High')
+        med_count  = cats.count('Medium')
+        low_count  = cats.count('Low')
+        total_classified = high_count + med_count + low_count
+        high_pct = round(high_count / total_classified * 100) if total_classified else 0
+        med_pct  = round(med_count  / total_classified * 100) if total_classified else 0
+        low_pct  = round(low_count  / total_classified * 100) if total_classified else 0
+
+        # Overall state category = majority
+        from collections import Counter
+        majority_cat = Counter(cats).most_common(1)[0][0] if cats else 'No Data'
+
+        return {
+            "type": "state",
+            "name": state_name,
+            "district_count": count,
+            "avg_wci": avg_wci,
+            "overall_category": majority_cat,
+            "future_trend": avg_trend_str,
+            "high_pct": high_pct,
+            "med_pct": med_pct,
+            "low_pct": low_pct,
+        }
+
+    # ── 4. Fuzzy match — handles typos (e.g. "maharastra" → "Maharashtra") ──
+    import difflib
+
+    # Collect unique state names and district names
+    all_state_names  = list({(f['properties'].get('st_nm') or '').upper() for f in features if f['properties'].get('st_nm')})
+    all_dist_names   = list({(f['properties'].get('district_std') or '').upper() for f in features if f['properties'].get('district_std')})
+
+    # Try fuzzy state match first
+    fuzzy_states = difflib.get_close_matches(query, all_state_names, n=1, cutoff=0.6)
+    if fuzzy_states:
+        # Re-run state logic with the corrected name
+        corrected = fuzzy_states[0]
+        state_districts = [
+            f['properties'] for f in features
+            if (f['properties'].get('st_nm') or '').upper() == corrected
+        ]
+        if state_districts:
+            state_name = state_districts[0].get('st_nm', corrected.title())
+            count = len(state_districts)
+            wci_values = [p.get('WCI', 0) for p in state_districts if p.get('WCI') is not None]
+            avg_wci = round(sum(wci_values) / len(wci_values), 3) if wci_values else 0
+            trend_values = []
+            for p in state_districts:
+                try:
+                    trend_values.append(float(str(p.get('Future_Increase_Chance', '')).replace('%', '')))
+                except Exception:
+                    pass
+            avg_trend = round(sum(trend_values) / len(trend_values), 1) if trend_values else None
+            avg_trend_str = f"{avg_trend:+.1f}%" if avg_trend is not None else "N/A"
+            cats = [p.get('Hotspot_Category', 'No Data') for p in state_districts]
+            from collections import Counter
+            high_count = cats.count('High'); med_count = cats.count('Medium'); low_count = cats.count('Low')
+            total_cls = high_count + med_count + low_count
+            majority_cat = Counter(cats).most_common(1)[0][0] if cats else 'No Data'
+            return {
+                "type": "state",
+                "name": state_name,
+                "fuzzy_corrected": True,
+                "district_count": count,
+                "avg_wci": avg_wci,
+                "overall_category": majority_cat,
+                "future_trend": avg_trend_str,
+                "high_pct": round(high_count / total_cls * 100) if total_cls else 0,
+                "med_pct":  round(med_count  / total_cls * 100) if total_cls else 0,
+                "low_pct":  round(low_count  / total_cls * 100) if total_cls else 0,
+            }
+
+    # Try fuzzy district match
+    fuzzy_dists = difflib.get_close_matches(query, all_dist_names, n=5, cutoff=0.6)
+    if fuzzy_dists:
+        return {
+            "type": "suggestions",
+            "matches": [
+                {"name": n.title(), "state": next(
+                    (f['properties'].get('st_nm') for f in features if (f['properties'].get('district_std') or '').upper() == n), ''
+                )}
+                for n in fuzzy_dists
+            ]
+        }
+
+    return {"type": "not_found", "message": f"No district or state found for '{q}'"}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
