@@ -188,6 +188,9 @@ def get_safest_route(request: RouteRequest):
             details = district_lookup.get(display_name, district_lookup.get(node_id, {}))
             detailed_path.append({
                 "name": display_name,
+                "node_id": node_id,
+                "lat": c_info.get('lat'),
+                "lng": c_info.get('lng'),
                 "risk": details.get('Hotspot_Category', 'Unknown'),
                 "wci":  details.get('WCI', 0)
             })

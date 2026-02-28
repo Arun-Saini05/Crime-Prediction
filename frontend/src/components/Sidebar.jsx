@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import axios from 'axios';
+import React, { useRef } from 'react';
 
 /* ── helpers ──────────────────────────────────────────────── */
 const catBadge = (cat) => {
@@ -43,84 +42,122 @@ const RoadCrimeBadge = ({ cat, trend }) => {
 };
 
 /* ── Search result cards ──────────────────────────────────── */
-const DistrictCard = ({ data, onClose }) => (
-    <div className="rounded-lg border border-slate-600 bg-slate-800/80 p-3 space-y-2 relative">
-        <button onClick={onClose} className="absolute top-2 right-2 text-slate-500 hover:text-white text-xs">✕</button>
-        <div>
-            <p className="text-base font-bold text-white leading-tight">{data.name}</p>
-            <p className="text-[10px] text-slate-400">{data.state}</p>
-        </div>
-        <div className="space-y-1.5">
-            <div className="flex justify-between items-center">
-                <span className="text-xs text-slate-400">Overall Risk</span>
-                <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${catBadge(data.category)}`}>{data.category}</span>
-            </div>
-            <div className="flex justify-between items-center">
-                <span className="text-xs text-slate-400">Future Trend</span>
-                <span className={`text-xs font-bold ${trendColor(data.future_trend)}`}>
-                    {trendIcon(data.future_trend)} {data.future_trend}
-                </span>
-            </div>
-        </div>
-        <RoadCrimeBadge cat={data.road_crime_category} trend={data.road_crime_trend} />
-    </div>
-);
+export const DistrictCard = ({ data, onClose, isMobile = false }) => {
+    const [expanded, setExpanded] = React.useState(!isMobile);
 
-const StateCard = ({ data, onClose }) => {
-    const total = data.high_pct + data.med_pct + data.low_pct;
     return (
-        <div className="rounded-lg border border-blue-500/30 bg-slate-800/80 p-3 space-y-3 relative">
-            <button onClick={onClose} className="absolute top-2 right-2 text-slate-500 hover:text-white text-xs">✕</button>
-            <div>
-                <div className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+        <div className="rounded-xl border border-slate-600 bg-slate-800/90 p-4 space-y-2 relative shadow-2xl backdrop-blur-md transition-all duration-300">
+            {isMobile && (
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-slate-600 rounded-full cursor-pointer" onClick={() => setExpanded(!expanded)}></div>
+            )}
+            <button onClick={onClose} className="absolute top-3 right-3 text-slate-500 hover:text-white bg-slate-700/50 rounded-full p-1.5 transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            <div onClick={() => isMobile && setExpanded(!expanded)} className={isMobile ? "cursor-pointer pt-2" : ""}>
+                <p className="text-lg font-bold text-white leading-tight">{data.name}</p>
+                <p className="text-xs text-slate-400">{data.state}</p>
+            </div>
+
+            {(expanded) && (
+                <div className="space-y-3 pt-2 animate-fade-in">
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-center bg-slate-900/50 p-2 rounded-lg border border-slate-700/50">
+                            <span className="text-xs text-slate-400">Overall Risk</span>
+                            <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase ${catBadge(data.category)}`}>{data.category}</span>
+                        </div>
+                        <div className="flex justify-between items-center bg-slate-900/50 p-2 rounded-lg border border-slate-700/50">
+                            <span className="text-xs text-slate-400">Future Trend</span>
+                            <span className={`text-xs font-bold ${trendColor(data.future_trend)}`}>
+                                {trendIcon(data.future_trend)} {data.future_trend}
+                            </span>
+                        </div>
+                    </div>
+                    <RoadCrimeBadge cat={data.road_crime_category} trend={data.road_crime_trend} />
+                </div>
+            )}
+
+            {isMobile && !expanded && (
+                <div className="text-center pt-1" onClick={() => setExpanded(true)}>
+                    <span className="text-[10px] text-blue-400 font-medium tracking-wide uppercase">Tap to Expand</span>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export const StateCard = ({ data, onClose, isMobile = false }) => {
+    const total = data.high_pct + data.med_pct + data.low_pct;
+    const [expanded, setExpanded] = React.useState(!isMobile);
+
+    return (
+        <div className="rounded-xl border border-blue-500/40 bg-slate-800/95 p-4 space-y-3 relative shadow-2xl backdrop-blur-md transition-all duration-300">
+            {isMobile && (
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-slate-600 rounded-full cursor-pointer" onClick={() => setExpanded(!expanded)}></div>
+            )}
+            <button onClick={onClose} className="absolute top-3 right-3 text-slate-500 hover:text-white bg-slate-700/50 rounded-full p-1.5 transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div onClick={() => isMobile && setExpanded(!expanded)} className={isMobile ? "cursor-pointer pt-2" : ""}>
+                <div className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
-                    <p className="text-sm font-bold text-blue-300">{data.name}</p>
+                    <p className="text-lg font-bold text-blue-300 tracking-wide">{data.name}</p>
                 </div>
-                <p className="text-[10px] text-slate-500 mt-0.5">{data.district_count} districts</p>
+                <p className="text-xs text-slate-400 mt-1">{data.district_count} districts</p>
                 {data.fuzzy_corrected && (
                     <p className="text-[10px] text-amber-400 mt-0.5 italic">✦ Auto-corrected spelling</p>
                 )}
             </div>
 
-            {/* Risk distribution bar */}
-            <div className="space-y-1">
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Risk Distribution</p>
-                <div className="flex rounded overflow-hidden h-2 w-full">
-                    {data.high_pct > 0 && <div style={{ width: `${data.high_pct}%` }} className="bg-red-500" />}
-                    {data.med_pct > 0 && <div style={{ width: `${data.med_pct}%` }} className="bg-orange-400" />}
-                    {data.low_pct > 0 && <div style={{ width: `${data.low_pct}%` }} className="bg-green-500" />}
-                </div>
-                <div className="flex gap-3 text-[9px] text-slate-400">
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500 inline-block" />High {data.high_pct}%</span>
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-orange-400 inline-block" />Med {data.med_pct}%</span>
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />Low {data.low_pct}%</span>
-                </div>
-            </div>
+            {(expanded) && (
+                <div className="animate-fade-in space-y-4 pt-1">
+                    {/* Risk distribution bar */}
+                    <div className="space-y-1.5 bg-slate-900/50 p-2.5 rounded-lg border border-slate-700/40">
+                        <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold mb-2">Risk Distribution</p>
+                        <div className="flex rounded-md overflow-hidden h-2.5 w-full">
+                            {data.high_pct > 0 && <div style={{ width: `${data.high_pct}%` }} className="bg-red-500" />}
+                            {data.med_pct > 0 && <div style={{ width: `${data.med_pct}%` }} className="bg-orange-500" />}
+                            {data.low_pct > 0 && <div style={{ width: `${data.low_pct}%` }} className="bg-green-500" />}
+                        </div>
+                        <div className="flex gap-4 text-[10px] text-slate-300 font-medium pt-1">
+                            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block shadow-[0_0_8px_rgba(239,68,68,0.5)]" />High {data.high_pct}%</span>
+                            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block shadow-[0_0_8px_rgba(245,158,11,0.5)]" />Med {data.med_pct}%</span>
+                            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block shadow-[0_0_8px_rgba(16,185,129,0.5)]" />Low {data.low_pct}%</span>
+                        </div>
+                    </div>
 
-            {/* Stats */}
-            <div className="space-y-1.5 pt-2 border-t border-slate-700/40">
-                <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Overall Category</span>
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${catBadge(data.overall_category)}`}>{data.overall_category}</span>
+                    {/* Stats */}
+                    <div className="space-y-2 pt-1 border-t border-slate-700/40">
+                        <div className="flex justify-between items-center bg-slate-900/30 px-3 py-2 rounded-lg">
+                            <span className="text-xs text-slate-400">Overall Category</span>
+                            <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase ${catBadge(data.overall_category)}`}>{data.overall_category}</span>
+                        </div>
+                        <div className="flex justify-between items-center bg-slate-900/30 px-3 py-2 rounded-lg">
+                            <span className="text-xs text-slate-400">Avg Future Trend</span>
+                            <span className={`text-xs font-bold ${trendColor(data.future_trend)}`}>
+                                {trendIcon(data.future_trend)} {data.future_trend}
+                            </span>
+                        </div>
+                        <div className="flex justify-between items-center bg-slate-900/30 px-3 py-2 rounded-lg">
+                            <span className="text-xs text-slate-400">Avg WCI</span>
+                            <span className="text-sm font-bold text-white">{data.avg_wci}</span>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Avg Future Trend</span>
-                    <span className={`text-xs font-bold ${trendColor(data.future_trend)}`}>
-                        {trendIcon(data.future_trend)} {data.future_trend}
-                    </span>
+            )}
+
+            {isMobile && !expanded && (
+                <div className="text-center pt-1" onClick={() => setExpanded(true)}>
+                    <span className="text-[10px] text-blue-400 font-medium tracking-wide uppercase">Tap to Expand Data</span>
                 </div>
-                <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Avg WCI</span>
-                    <span className="text-xs font-bold text-slate-300">{data.avg_wci}</span>
-                </div>
-            </div>
+            )}
         </div>
     );
 };
 
-const SuggestionList = ({ matches, onSelect }) => (
+export const SuggestionList = ({ matches, onSelect }) => (
     <div className="rounded-lg border border-slate-600 bg-slate-800/90 divide-y divide-slate-700 overflow-hidden">
         {matches.map((m) => (
             <button key={m.name} onClick={() => onSelect(m.name)}
@@ -133,57 +170,13 @@ const SuggestionList = ({ matches, onSelect }) => (
 );
 
 /* ── Main Sidebar ─────────────────────────────────────────── */
-const Sidebar = ({ hoveredDistrict, setRoutePath, setSearchTarget, showRoads, setShowRoads }) => {
-    const [source, setSource] = useState('');
-    const [destination, setDestination] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [routeResult, setRouteResult] = useState(null);
-    const [error, setError] = useState(null);
-
-    // Search state
-    const [searchQ, setSearchQ] = useState('');
-    const [searchResult, setSearchResult] = useState(null);
-    const [searchLoading, setSearchLoading] = useState(false);
-    const [searchError, setSearchError] = useState('');
-    const searchRef = useRef(null);
-
-    /* Route finder */
-    const handleSearch = async () => {
-        if (!source || !destination) return;
-        setLoading(true); setError(null); setRouteResult(null);
-        try {
-            const res = await axios.post('http://localhost:8001/api/safest-route', { source, destination });
-            if (res.data.error) { setError(res.data.error); }
-            else { setRouteResult(res.data.path); setRoutePath(res.data.path); }
-        } catch (err) {
-            setError("Failed to fetch route. Is backend running?");
-        } finally { setLoading(false); }
-    };
-
-    /* Region search */
-    const handleRegionSearch = async (overrideQ) => {
-        const q = (overrideQ ?? searchQ).trim();
-        if (!q) return;
-        setSearchLoading(true); setSearchError(''); setSearchResult(null);
-        try {
-            const res = await axios.get(`http://localhost:8001/api/search?q=${encodeURIComponent(q)}`);
-            if (res.data.type === 'not_found') {
-                setSearchError(res.data.message);
-            } else {
-                setSearchResult(res.data);
-                // Tell the map to fly-to and highlight
-                if (res.data.type === 'district') {
-                    setSearchTarget({ type: 'district', name: res.data.name });
-                } else if (res.data.type === 'state') {
-                    setSearchTarget({ type: 'state', name: res.data.name });
-                } else if (res.data.type === 'suggestions' && res.data.matches?.length === 1) {
-                    setSearchTarget({ type: 'district', name: res.data.matches[0].name });
-                }
-            }
-        } catch {
-            setSearchError("Backend not reachable.");
-        } finally { setSearchLoading(false); }
-    };
+const Sidebar = ({
+    hoveredDistrict, setRoutePath, setSearchTarget, showRoads, setShowRoads,
+    // Search Hook Props
+    searchQ, setSearchQ, searchResult, setSearchResult, searchLoading, searchError, setSearchError, searchRef, handleRegionSearch,
+    // Route Hook Props
+    source, setSource, destination, setDestination, routeLoading, routeResult, setRouteResult, routeError, handleRouteSearch
+}) => {
 
     const showRoadCrime =
         hoveredDistrict &&
@@ -192,12 +185,14 @@ const Sidebar = ({ hoveredDistrict, setRoutePath, setSearchTarget, showRoads, se
         (hoveredDistrict.roadCrimeScore || 0) >= 0.05;
 
     return (
-        <div className="absolute top-0 left-0 h-full w-80 bg-slate-900/90 backdrop-blur-md text-white shadow-xl z-[1000] p-5 overflow-y-auto border-r border-slate-700 space-y-5">
+        <div className="hidden md:block absolute top-0 left-0 h-full w-80 bg-slate-900/90 backdrop-blur-md text-white shadow-xl z-[1000] p-5 overflow-y-auto border-r border-slate-700 space-y-5">
 
             {/* ── Title ── */}
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                SafeTravels India
-            </h1>
+            <div className="flex justify-between items-center">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    SafeTravels India
+                </h1>
+            </div>
 
             {/* ── Search Bar ── */}
             <div className="space-y-2">
@@ -352,12 +347,12 @@ const Sidebar = ({ hoveredDistrict, setRoutePath, setSearchTarget, showRoads, se
                             className="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="e.g. DELHI" />
                     </div>
-                    <button onClick={handleSearch} disabled={loading}
+                    <button onClick={handleRouteSearch} disabled={routeLoading}
                         className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 rounded transition-colors disabled:opacity-50">
-                        {loading ? 'Finding Safe Path...' : 'Find Safest Route'}
+                        {routeLoading ? 'Finding Safe Path...' : 'Find Safest Route'}
                     </button>
 
-                    {error && <div className="p-3 bg-red-900/30 border border-red-800 rounded text-red-300 text-xs">{error}</div>}
+                    {routeError && <div className="p-3 bg-red-900/30 border border-red-800 rounded text-red-300 text-xs">{routeError}</div>}
 
                     {routeResult && (
                         <div className="mt-2 p-4 bg-green-900/20 border border-green-800 rounded">

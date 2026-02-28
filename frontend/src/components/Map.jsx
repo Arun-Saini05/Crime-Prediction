@@ -35,7 +35,7 @@ const FlyToSearchTarget = ({ target, geoData }) => {
         }
 
         if (target.type === 'state') {
-            fetch(`http://localhost:8001/api/state-boundary/${encodeURIComponent(target.name)}`)
+            fetch(`/api/state-boundary/${encodeURIComponent(target.name)}`)
                 .then(r => r.json())
                 .then(dissolved => {
                     if (cancelled) return;  // effect was cleaned up — discard stale response
@@ -94,7 +94,7 @@ const FlyToSearchTarget = ({ target, geoData }) => {
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
-const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }) => {
+const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads, setIsMobileSidebarOpen }) => {
     const [geoData, setGeoData] = useState(null);
     const [selectedDistrict, setSelectedDistrict] = useState(null);
     const [routeCoords, setRouteCoords] = useState([]);
@@ -104,15 +104,19 @@ const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }
 
         const coords = [];
         routePath.forEach(stop => {
-            const districtName = stop.name;
-            const feature = geoData.features.find(f =>
-                (f.properties.district_std || f.properties.district || '').toUpperCase().trim() === districtName.toUpperCase().trim()
-            );
+            if (stop.lat && stop.lng) {
+                coords.push([stop.lat, stop.lng]);
+            } else {
+                const districtName = stop.name;
+                const feature = geoData.features.find(f =>
+                    (f.properties.district_std || f.properties.district || '').toUpperCase().trim() === districtName.toUpperCase().trim()
+                );
 
-            if (feature) {
-                const layer = L.geoJSON(feature);
-                const center = layer.getBounds().getCenter();
-                coords.push([center.lat, center.lng]);
+                if (feature) {
+                    const layer = L.geoJSON(feature);
+                    const center = layer.getBounds().getCenter();
+                    coords.push([center.lat, center.lng]);
+                }
             }
         });
 
@@ -122,7 +126,7 @@ const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }
     useEffect(() => {
         // Fetch GeoJSON from backend with cache busting (V3)
         const timestamp = new Date().getTime();
-        axios.get(`http://localhost:8001/api/districts_v3?t=${timestamp}`)
+        axios.get(`/api/districts_v3?t=${timestamp}`)
             .then(res => {
                 if (res.data.error) {
                     console.error("Backend Error:", res.data.error);
@@ -195,7 +199,71 @@ const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }
                 setHoveredDistrict(null);
             },
             click: (e) => {
-                // Select district logic
+                // Select district logic for touch devices
+                const layer = e.target;
+                layer.setStyle({
+                    weight: 3,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.8
+                });
+
+                // Update Sidebar state (for desktop)
+                setHoveredDistrict({
+                    name: feature.properties.district_std || feature.properties.district || "Unknown District",
+                    wci: feature.properties.WCI || 0,
+                    category: feature.properties.Hotspot_Category || "No Data",
+                    futureChance: feature.properties.Future_Increase_Chance || "N/A",
+                    date: feature.properties.Analysis_Date || new Date().toLocaleDateString(),
+                    roadCrimeCategory: feature.properties.Road_Crime_Category || "No Data",
+                    roadCrimeScore: feature.properties.Road_Crime_Score || 0,
+                    rashDriving: feature.properties.incidence_of_rash_driving || 0,
+                    motorVehicle: feature.properties.motor_vehicle_act || 0,
+                    deathByNegligence: feature.properties.causing_death_by_negligence || 0,
+                    robbery: feature.properties.robbery || 0,
+                    totalCrimes: feature.properties.Total_Crimes || 0,
+                    roadCrimeTrend: feature.properties.Road_Crime_Future_Trend || null,
+                });
+
+                // 🔥 MOBILE POPUP (Google Maps Style)
+                // If it's a small screen, we rely on the popup instead of the sidebar.
+                // We bind the native leaflet popup with tailwind-styled HTML.
+                if (window.innerWidth < 768) {
+                    const cat = feature.properties.Hotspot_Category || "No Data";
+                    const isHigh = cat === 'High';
+                    const isMed = cat === 'Medium';
+                    const colorScore = isHigh ? 'text-red-500' : isMed ? 'text-orange-500' : 'text-green-500';
+                    const trend = feature.properties.Future_Increase_Chance || "N/A";
+                    const trendColor = trend.includes('-') ? 'text-green-600' : 'text-red-500';
+
+                    const popupContent = `
+                        <div class="px-1.5 py-1 min-w-[110px] max-w-[140px]">
+                            <h3 class="font-bold text-[11px] text-slate-800 leading-tight uppercase tracking-wide truncate" title="${feature.properties.district_std || feature.properties.district}">${feature.properties.district_std || feature.properties.district}</h3>
+                            <p class="text-[8px] text-slate-500 mt-[2px] mb-1 border-b border-slate-200 pb-1">Date: ${feature.properties.Analysis_Date || new Date().toLocaleDateString()}</p>
+                            
+                            <div class="space-y-[2px] flex flex-col pt-0.5">
+                                <div class="flex justify-between items-center text-[9px]">
+                                    <strong class="text-slate-600 font-medium">Risk:</strong>
+                                    <span class="font-bold uppercase ${colorScore}">${cat}</span>
+                                </div>
+                                <div class="flex justify-between items-center text-[9px]">
+                                    <strong class="text-slate-600 font-medium">Trend:</strong>
+                                    <span class="font-bold tracking-tight ${trendColor}">${trend}</span>
+                                </div>
+                                <div class="flex justify-between items-center text-[9px] border-t border-slate-100 pt-[2px] mt-[2px]">
+                                    <strong class="text-slate-600 font-medium">WCI:</strong>
+                                    <span class="font-bold text-slate-700">${parseFloat(feature.properties.WCI || 0).toFixed(3)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    layer.bindPopup(popupContent, {
+                        className: 'custom-leaflet-popup shadow-[0_4px_15px_-3px_rgba(0,0,0,0.3)] rounded-lg',
+                        closeButton: false,
+                        offset: [0, -3],
+                    }).openPopup();
+                }
             }
         });
     };
@@ -205,7 +273,7 @@ const MapComponent = ({ routePath, setHoveredDistrict, searchTarget, showRoads }
     return (
         <div className="h-full w-full z-0">
             <MapContainer key="map-container-v1" center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true} className="h-full w-full" zoomControl={false}>
-                <ZoomControl position="bottomleft" />
+
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" // Dark theme base map
